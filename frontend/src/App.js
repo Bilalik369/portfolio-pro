@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import React from 'react';
+  import Navbar from './components/Navbar';
+  import About from './components/About';
+  import Home from './components/Home';
 
-export default App;
+  function App() {
+    return (
+      <div className="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 scroll-smooth">
+        <Navbar />
+
+        <section id="home" className="h-screen flex items-center justify-center">
+          <Home/>
+        </section>
+
+        <section id="about">
+          <About />
+        </section>
+
+        <section id="projects" className="h-screen flex items-center justify-center">
+          <h2 className="text-3xl">Mes Projets</h2>
+        </section>
+
+        <section id="skills" className="h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-800">
+          <h2 className="text-3xl">Compétences</h2>
+        </section>
+
+        <section id="contact" className="h-screen flex items-center justify-center">
+          <h2 className="text-3xl">Contactez-moi</h2>
+        </section>
+      </div>
+    );
+  }
+
+  export default App;
