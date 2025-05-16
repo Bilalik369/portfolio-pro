@@ -3,6 +3,7 @@
 import { useEffect } from "react"
 import Home from "./components/Home"
 import Navbar from "./components/Navbar"
+import About from "./components/About" // Importation du composant About
 import { ThemeProvider } from "./context/ThemeContext"
 import "./App.css"
 
@@ -29,7 +30,8 @@ function App() {
       <div className="App">
         <Navbar />
         <Home />
-        
+        <About /> {/* Ajout de la section About */}
+        {/* Add other sections here */}
       </div>
     </ThemeProvider>
   )

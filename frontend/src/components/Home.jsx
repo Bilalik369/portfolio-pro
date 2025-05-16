@@ -14,7 +14,7 @@ import {
 import { TypeAnimation } from "react-type-animation"
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { useTheme } from "../context/ThemeContext";
-import Image  from "../assets/software tester-rafiki.png"
+import Image  from "../assets/full.jpg"
 
 const Home = () => {
   const ref = useRef(null)
@@ -309,18 +309,19 @@ const Home = () => {
 
             
             <motion.div
-              variants={fadeIn("down", 0.6)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: false, amount: 0.7 }}
-              className="lg:w-1/2 flex justify-center"
-            >
-              <img
-                src={Image}
-                alt="Profile"
-                className="w-[250px] lg:w-[350px] rounded-full shadow-lg"
-              />
-            </motion.div>
+  variants={fadeIn("down", 0.6)}
+  initial="hidden"
+  whileInView="show"
+  viewport={{ once: false, amount: 0.7 }}
+  className="lg:w-1/2 flex justify-center"
+>
+  <img
+    src={Image}
+    alt="Profile"
+    className="w-[350px] lg:w-[500px] rounded-xl shadow-lg"
+  />
+</motion.div>
+
           </div>
 
         
