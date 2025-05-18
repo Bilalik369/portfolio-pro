@@ -1,185 +1,354 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { FaCode, FaServer, FaPalette, FaMobileAlt } from "react-icons/fa"
+import { useRef } from "react"
+import { motion, useScroll, useTransform } from "framer-motion"
+import { useInView } from "react-intersection-observer"
+import CountUp from "react-countup"
 import { useTheme } from "../context/ThemeContext"
+import Image from "../assets/full.jpg" // Using the same image from your Home component
 
 const About = () => {
+  const containerRef = useRef(null)
   const { theme } = useTheme()
 
-  const fadeIn = (direction, delay) => {
-    return {
-      hidden: {
-        y: direction === "up" ? 80 : direction === "down" ? -80 : 0,
-        opacity: 0,
-        x: direction === "left" ? 80 : direction === "right" ? -80 : 0,
+  const [ref, inView] = useInView({
+    threshold: 0.2,
+    triggerOnce: false,
+  })
+
+  // Parallax effect
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  })
+
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, -150])
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, 150])
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0])
+
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
       },
-      show: {
-        y: 0,
-        x: 0,
-        opacity: 1,
-        transition: {
-          type: "tween",
-          duration: 1.2,
-          delay: delay,
-          ease: [0.25, 0.25, 0.25, 0.75],
-        },
-      },
-    }
+    },
   }
 
-  const skills = [
-    { name: "HTML/CSS", level: 90 },
-    { name: "JavaScript", level: 85 },
-    { name: "React", level: 80 },
-    { name: "Node.js", level: 75 },
-    { name: "UI/UX Design", level: 70 },
-  ]
+  const itemVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 12,
+      },
+    },
+  }
+
+  const imageVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 50,
+        damping: 20,
+        duration: 1.2,
+      },
+    },
+  }
+
+  const statsVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+        delay: 0.6,
+      },
+    },
+  }
+
+  const buttonVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+        delay: 0.8,
+      },
+    },
+    hover: {
+      scale: 1.05,
+      transition: {
+        type: "spring",
+        stiffness: 400,
+        damping: 10,
+      },
+    },
+    tap: {
+      scale: 0.95,
+    },
+  }
 
   return (
     <section
       id="about"
-      className="relative py-20 overflow-hidden bg-slate-50 dark:bg-gray-900 transition-colors duration-500"
+      ref={containerRef}
+      className="relative min-h-screen py-20 overflow-hidden bg-gradient-to-b from-white via-slate-50 to-slate-100 dark:from-gray-800 dark:via-gray-900 dark:to-gray-900 transition-colors duration-500 pt-28 md:pt-32"
     >
       {/* Background elements */}
-      <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gradient-to-b from-blue-500/5 to-purple-500/5 dark:from-blue-500/10 dark:to-purple-500/10 rounded-bl-full filter blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-gradient-to-t from-blue-500/5 to-purple-500/5 dark:from-blue-500/10 dark:to-purple-500/10 rounded-tr-full filter blur-3xl" />
-
-      <div className="container mx-auto px-4">
-        {/* Section Title */}
-        <motion.div
-          variants={fadeIn("up", 0.3)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: false, amount: 0.1 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white transition-colors duration-500">
-            À Propos de{" "}
-            <span className="relative">
-              <span className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-600 blur-lg opacity-30"></span>
-              <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                Moi
-              </span>
-            </span>
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6 rounded-full"></div>
-        </motion.div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          {/* About Text */}
-          <motion.div
-            variants={fadeIn("right", 0.4)}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: false, amount: 0.3 }}
-          >
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 transition-colors duration-500 relative overflow-hidden">
-              {/* Decorative element */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-b from-blue-500/10 to-purple-500/10 rounded-bl-full" />
-
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white transition-colors duration-500">
-                Bonjour, je suis Bilal Iken
-              </h3>
-
-              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed transition-colors duration-500">
-                Développeur web passionné par la création d'expériences numériques innovantes et attrayantes. Je me spécialise dans le développement d'applications web modernes utilisant les dernières technologies et outils.
-              </p>
-
-              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed transition-colors duration-500">
-                Je cherche constamment à améliorer mes compétences et à apprendre de nouvelles technologies pour offrir des solutions créatives à des problèmes complexes. Je crois qu'un bon design et des fonctionnalités fluides sont la clé d'une expérience utilisateur parfaite.
-              </p>
-
-              <div className="flex flex-wrap gap-3 mt-6">
-                <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm font-medium transition-colors duration-500">
-                  Développeur Frontend
-                </span>
-                <span className="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-full text-sm font-medium transition-colors duration-500">
-                  Designer UI/UX
-                </span>
-                <span className="px-4 py-2 bg-teal-100 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400 rounded-full text-sm font-medium transition-colors duration-500">
-                  Développeur Backend
-                </span>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Skills */}
-          <motion.div
-            variants={fadeIn("left", 0.5)}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: false, amount: 0.3 }}
-          >
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 transition-colors duration-500">
-              <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white transition-colors duration-500">
-                Mes Compétences
-              </h3>
-
-              <div className="space-y-5">
-                {skills.map((skill, index) => (
-                  <div key={index} className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-gray-700 dark:text-gray-300 transition-colors duration-500">
-                        {skill.name}
-                      </span>
-                      <span className="text-blue-600 dark:text-blue-400 font-medium transition-colors duration-500">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <div className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden transition-colors duration-500">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1, delay: 0.3 + index * 0.1 }}
-                        className="h-full bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="grid grid-cols-2 gap-4 mt-8">
-                <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-4 text-center transition-colors duration-500">
-                  <div className="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-800 flex items-center justify-center mx-auto mb-3 text-blue-600 dark:text-blue-400 transition-colors duration-500">
-                    <FaCode className="text-xl" />
-                  </div>
-                  <h4 className="font-medium text-gray-900 dark:text-white transition-colors duration-500">
-                    Développement Frontend
-                  </h4>
-                </div>
-
-                <div className="bg-purple-50 dark:bg-purple-900/20 rounded-xl p-4 text-center transition-colors duration-500">
-                  <div className="w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-800 flex items-center justify-center mx-auto mb-3 text-purple-600 dark:text-purple-400 transition-colors duration-500">
-                    <FaPalette className="text-xl" />
-                  </div>
-                  <h4 className="font-medium text-gray-900 dark:text-white transition-colors duration-500">
-                    Design UI/UX
-                  </h4>
-                </div>
-
-                <div className="bg-teal-50 dark:bg-teal-900/20 rounded-xl p-4 text-center transition-colors duration-500">
-                  <div className="w-12 h-12 rounded-full bg-teal-100 dark:bg-teal-800 flex items-center justify-center mx-auto mb-3 text-teal-600 dark:text-teal-400 transition-colors duration-500">
-                    <FaServer className="text-xl" />
-                  </div>
-                  <h4 className="font-medium text-gray-900 dark:text-white transition-colors duration-500">
-                    Développement Backend
-                  </h4>
-                </div>
-
-                <div className="bg-amber-50 dark:bg-amber-900/20 rounded-xl p-4 text-center transition-colors duration-500">
-                  <div className="w-12 h-12 rounded-full bg-amber-100 dark:bg-amber-800 flex items-center justify-center mx-auto mb-3 text-amber-600 dark:text-amber-400 transition-colors duration-500">
-                    <FaMobileAlt className="text-xl" />
-                  </div>
-                  <h4 className="font-medium text-gray-900 dark:text-white transition-colors duration-500">
-                    Applications Mobiles
-                  </h4>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+      <div className="absolute inset-0 w-full h-full">
+        {/* Particles */}
+        <div className="absolute inset-0 opacity-20">
+          {[...Array(20)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute rounded-full bg-blue-500 dark:bg-blue-400"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: Math.random() * 0.5 + 0.2 }}
+              transition={{ duration: 1, delay: i * 0.1 }}
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                width: `${Math.random() * 6 + 2}px`,
+                height: `${Math.random() * 6 + 2}px`,
+                animation: `floatParticle ${Math.random() * 10 + 10}s linear infinite`,
+                animationDelay: `${Math.random() * 10}s`,
+              }}
+            />
+          ))}
         </div>
+
+        {/* Gradient blobs */}
+        <motion.div
+          className="absolute top-20 right-10 w-72 h-72 bg-blue-500/5 dark:bg-blue-500/10 rounded-full filter blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.5, 0.8, 0.5],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Number.POSITIVE_INFINITY,
+            repeatType: "reverse",
+          }}
+        />
+        <motion.div
+          className="absolute bottom-20 left-10 w-72 h-72 bg-purple-500/5 dark:bg-purple-500/10 rounded-full filter blur-3xl"
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.5, 0.7, 0.5],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Number.POSITIVE_INFINITY,
+            repeatType: "reverse",
+            delay: 1,
+          }}
+        />
+
+        {/* Grid background */}
+        <div
+          className="absolute inset-0 w-full h-full opacity-[0.02] dark:opacity-[0.02] z-0"
+          style={{
+            backgroundSize: "50px 50px",
+            backgroundImage:
+              theme === "dark"
+                ? "linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px)"
+                : "linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px)",
+          }}
+        />
       </div>
+
+      <div className="container mx-auto px-4 z-10 relative" ref={ref}>
+        <motion.div
+          className="flex flex-col lg:flex-row items-center justify-between gap-x-16 gap-y-10"
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+        >
+          {/* Image Section */}
+          <motion.div className="lg:w-1/2 relative" style={{ y: y1 }} variants={imageVariants}>
+            <motion.div
+              className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-xl"
+              animate={{
+                scale: [1, 1.05, 1],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Number.POSITIVE_INFINITY,
+                repeatType: "reverse",
+              }}
+            />
+            <motion.div
+              className="relative rounded-xl overflow-hidden shadow-2xl"
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              <img src={Image || "/placeholder.svg"} alt="Profile" className="w-full h-auto rounded-xl" />
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
+              />
+            </motion.div>
+          </motion.div>
+
+          {/* Text Section */}
+          <motion.div className="lg:w-1/2" style={{ y: y2 }}>
+            <motion.h2
+              className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white"
+              variants={itemVariants}
+            >
+              About{" "}
+              <span className="relative inline-block">
+                <span
+                  className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 blur-xl opacity-30"
+                  style={{ transform: "translateY(10px) scale(1.05)" }}
+                ></span>
+                <span
+                  className="relative"
+                  style={{
+                    background: "linear-gradient(to right, #0071ff, #7c3aed)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  Me
+                </span>
+              </span>
+            </motion.h2>
+
+            <motion.div
+              className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mb-6 rounded-full"
+              variants={itemVariants}
+            />
+
+            <motion.h3 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200" variants={itemVariants}>
+              I'm a developer front-end and back-end with over 1 year of experience.
+            </motion.h3>
+
+            <motion.p className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed" variants={itemVariants}>
+              I am passionate about creating beautiful and functional solutions that solve real-world problems through
+              clean code and intuitive design. With expertise in both frontend and backend technologies, I deliver
+              complete web solutions that exceed expectations and provide exceptional user experiences.
+            </motion.p>
+
+            {/* Stats Section */}
+            <motion.div className="flex gap-x-12 mb-10" variants={statsVariants}>
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl blur-md" />
+                <div className="relative bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-xl p-4 shadow-sm">
+                  <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 mb-1">
+                    {inView ? <CountUp start={0} end={13} duration={2.5} /> : 0}+
+                  </div>
+                  <div className="text-sm font-medium text-gray-600 dark:text-gray-300 uppercase tracking-wider">
+                    Projects
+                    <br />
+                    Completed
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-xl blur-md" />
+                <div className="relative bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-xl p-4 shadow-sm">
+                  <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-600 mb-1">
+                    {inView ? <CountUp start={0} end={12} duration={2.5} /> : 0}+
+                  </div>
+                  <div className="text-sm font-medium text-gray-600 dark:text-gray-300 uppercase tracking-wider">
+                    Months of
+                    <br />
+                    Experience
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Buttons */}
+            <div className="flex flex-wrap gap-4">
+              <motion.a
+                href="#contact"
+                className="group relative px-8 py-3 text-white rounded-full font-medium flex items-center gap-2 overflow-hidden"
+                variants={buttonVariants}
+                whileHover="hover"
+                whileTap="tap"
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:scale-105"></span>
+                <span className="relative flex items-center">
+                  Contact Me
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </span>
+              </motion.a>
+
+              <motion.a
+                href="#projects"
+                className="group relative px-8 py-3 overflow-hidden rounded-full"
+                variants={buttonVariants}
+                whileHover="hover"
+                whileTap="tap"
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20 opacity-50 group-hover:opacity-100 transition-opacity"></span>
+                <span className="relative font-medium text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 flex items-center">
+                  My Portfolio
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform text-purple-600"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </span>
+              </motion.a>
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Animation styles */}
+      <style jsx global>{`
+        @keyframes floatParticle {
+          0% {
+            transform: translateY(0) translateX(0);
+          }
+          25% {
+            transform: translateY(-20px) translateX(10px);
+          }
+          50% {
+            transform: translateY(0) translateX(20px);
+          }
+          75% {
+            transform: translateY(20px) translateX(10px);
+          }
+          100% {
+            transform: translateY(0) translateX(0);
+          }
+        }
+      `}</style>
     </section>
   )
 }

@@ -14,7 +14,7 @@ import {
 import { TypeAnimation } from "react-type-animation"
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { useTheme } from "../context/ThemeContext";
-import Image  from "../assets/full.jpg"
+import Image  from "../assets/tess.png"
 
 const Home = () => {
   const ref = useRef(null)
