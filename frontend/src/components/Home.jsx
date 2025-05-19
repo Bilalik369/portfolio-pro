@@ -1,5 +1,3 @@
-"use client"
-
 import { useRef, useState, useEffect } from "react"
 import {
   FaGithub,
@@ -14,7 +12,7 @@ import {
 import { TypeAnimation } from "react-type-animation"
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { useTheme } from "../context/ThemeContext";
-import Image  from "../assets/tess.png"
+import Image  from "../assets/hadik.png"
 
 const Home = () => {
   const ref = useRef(null)
@@ -223,21 +221,30 @@ const Home = () => {
                   ))}
                 </motion.div>
 
+                {/* Added animated text for "Let's work together" */}
+                <motion.div 
+                  variants={fadeIn("up", 0.58)}
+                  className="mb-6"
+                >
+                  <motion.p
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ 
+                      opacity: 1, 
+                      scale: 1,
+                      textShadow: ["0px 0px 0px rgba(123, 58, 237, 0)", "0px 0px 8px rgba(123, 58, 237, 0.5)", "0px 0px 0px rgba(123, 58, 237, 0)"]
+                    }}
+                    transition={{ 
+                      duration: 2,
+                      repeat: Number.POSITIVE_INFINITY,
+                      repeatType: "reverse"
+                    }}
+                    className="text-xl font-semibold bg-gradient-to-r from-emerald-400 to-pink-600 bg-clip-text text-transparent"
+                  >
+                    Let's work together and make something great.
+                  </motion.p>
+                </motion.div>
                 
                 <motion.div variants={fadeIn("up", 0.6)} className="flex flex-wrap gap-4 mb-10">
-                  <a
-                    href="#contact"
-                    className="group relative px-8 py-3 text-white rounded-full font-medium flex items-center gap-2 overflow-hidden"
-                  >
-                    <span
-                      className={`absolute inset-0 bg-gradient-to-r ${buttonGradient} transition-all duration-300 group-hover:scale-105`}
-                    ></span>
-                    <span className="relative flex items-center">
-                      Contact Me
-                      <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  </a>
-
                   <a
                     href="#projects"
                     className="group relative px-8 py-3 text-white rounded-full font-medium flex items-center gap-2 overflow-hidden"
