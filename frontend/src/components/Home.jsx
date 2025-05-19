@@ -1,18 +1,11 @@
+"use client"
+
 import { useRef, useState, useEffect } from "react"
-import {
-  FaGithub,
-  FaLinkedin,
-  FaInstagram,
-  FaArrowRight,
-  FaDownload,
-  FaCode,
-  FaLaptopCode,
-  FaServer,
-} from "react-icons/fa"
+import { FaGithub, FaLinkedin, FaInstagram, FaCode, FaLaptopCode, FaServer } from "react-icons/fa"
 import { TypeAnimation } from "react-type-animation"
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
-import { useTheme } from "../context/ThemeContext";
-import Image  from "../assets/hadik.png"
+import { useTheme } from "../context/ThemeContext"
+import Image from "../assets/hadik.png"
 
 const Home = () => {
   const ref = useRef(null)
@@ -28,7 +21,6 @@ const Home = () => {
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "200%"])
 
   useEffect(() => {
-    
     const timer = setTimeout(() => {
       setIsLoaded(true)
     }, 500)
@@ -65,12 +57,10 @@ const Home = () => {
     { icon: <FaServer />, title: "Backend Solutions", color: "from-teal-500 to-teal-600" },
   ]
 
- 
   const buttonGradient = "from-blue-600 to-purple-600"
 
   return (
     <>
-     
       <AnimatePresence>
         {!isLoaded && (
           <motion.div
@@ -129,7 +119,6 @@ const Home = () => {
           <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-500/5 dark:bg-purple-500/10 rounded-full filter blur-3xl transition-colors duration-500" />
         </div>
 
-     
         <div
           className="absolute inset-0 w-full h-full opacity-[0.02] dark:opacity-[0.02] z-0 transition-opacity duration-500"
           style={{
@@ -143,7 +132,6 @@ const Home = () => {
 
         <div className="container mx-auto px-4 z-10">
           <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-12 lg:gap-20">
-          
             <motion.div
               variants={fadeIn("right", 0.3)}
               initial="hidden"
@@ -152,8 +140,6 @@ const Home = () => {
               className="lg:w-1/2 max-w-lg"
             >
               <div className="relative">
-               
-
                 <motion.h1
                   style={{ y: textY }}
                   className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-gray-900 dark:text-white transition-colors duration-500"
@@ -222,58 +208,29 @@ const Home = () => {
                 </motion.div>
 
                 {/* Added animated text for "Let's work together" */}
-                <motion.div 
-                  variants={fadeIn("up", 0.58)}
-                  className="mb-6"
-                >
+                <motion.div variants={fadeIn("up", 0.58)} className="mb-6">
                   <motion.p
                     initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ 
-                      opacity: 1, 
+                    animate={{
+                      opacity: 1,
                       scale: 1,
-                      textShadow: ["0px 0px 0px rgba(123, 58, 237, 0)", "0px 0px 8px rgba(123, 58, 237, 0.5)", "0px 0px 0px rgba(123, 58, 237, 0)"]
+                      textShadow: [
+                        "0px 0px 0px rgba(123, 58, 237, 0)",
+                        "0px 0px 12px rgba(123, 58, 237, 0.7)",
+                        "0px 0px 0px rgba(123, 58, 237, 0)",
+                      ],
                     }}
-                    transition={{ 
-                      duration: 2,
+                    transition={{
+                      duration: 2.5,
                       repeat: Number.POSITIVE_INFINITY,
-                      repeatType: "reverse"
+                      repeatType: "reverse",
                     }}
-                    className="text-xl font-semibold bg-gradient-to-r from-emerald-400 to-pink-600 bg-clip-text text-transparent"
+                    className="text-2xl font-bold bg-gradient-to-r from-emerald-400 via-purple-500 to-pink-600 bg-clip-text text-transparent"
                   >
                     Let's work together and make something great.
                   </motion.p>
                 </motion.div>
-                
-                <motion.div variants={fadeIn("up", 0.6)} className="flex flex-wrap gap-4 mb-10">
-                  <a
-                    href="#projects"
-                    className="group relative px-8 py-3 text-white rounded-full font-medium flex items-center gap-2 overflow-hidden"
-                  >
-                    <span
-                      className={`absolute inset-0 bg-gradient-to-r ${buttonGradient} transition-all duration-300 group-hover:scale-105`}
-                    ></span>
-                    <span className="relative flex items-center">
-                      View Projects
-                      <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  </a>
 
-                  <a
-                    href="/resume.pdf"
-                    download
-                    className="group relative px-8 py-3 text-white rounded-full font-medium flex items-center gap-2 overflow-hidden"
-                  >
-                    <span
-                      className={`absolute inset-0 bg-gradient-to-r ${buttonGradient} transition-all duration-300 group-hover:scale-105`}
-                    ></span>
-                    <span className="relative flex items-center">
-                      Download CV
-                      <FaDownload className="ml-2 group-hover:translate-y-1 transition-transform" />
-                    </span>
-                  </a>
-                </motion.div>
-
-                
                 <motion.div variants={fadeIn("up", 0.7)} className="flex gap-5">
                   <a
                     href="https://linkedin.com"
@@ -314,50 +271,19 @@ const Home = () => {
               </div>
             </motion.div>
 
-            
             <motion.div
-  variants={fadeIn("down", 0.6)}
-  initial="hidden"
-  whileInView="show"
-  viewport={{ once: false, amount: 0.7 }}
-  className="lg:w-1/2 flex justify-center"
->
-  <img
-    src={Image}
-    alt="Profile"
-    className="w-[350px] lg:w-[500px] rounded-xl shadow-lg"
-  />
-</motion.div>
-
+              variants={fadeIn("down", 0.6)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false, amount: 0.7 }}
+              className="lg:w-1/2 flex justify-center"
+            >
+              <img src={Image || "/placeholder.svg"} alt="Profile" className="w-[350px] lg:w-[500px] rounded-xl" />
+            </motion.div>
           </div>
-
-        
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2, duration: 1 }}
-            className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
-          >
-            <span className="text-sm text-gray-500 dark:text-gray-400 mb-2 transition-colors duration-500">
-              Scroll Down
-            </span>
-            <div className="w-6 h-10 border-2 border-gray-300 dark:border-gray-500 rounded-full flex justify-center p-1 transition-colors duration-500">
-              <motion.div
-                animate={{
-                  y: [0, 12, 0],
-                }}
-                transition={{
-                  repeat: Number.POSITIVE_INFINITY,
-                  duration: 1.5,
-                }}
-                className="w-1.5 h-1.5 bg-blue-500 rounded-full"
-              />
-            </div>
-          </motion.div>
         </div>
       </section>
 
-      
       <style jsx global>{`
         @keyframes floatParticle {
           0% {
