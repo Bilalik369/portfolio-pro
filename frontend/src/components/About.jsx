@@ -273,7 +273,7 @@ const About = () => {
           <motion.div 
             className="lg:w-1/2 flex items-center" 
             style={{ 
-              // Removed y2 transform for horizontal alignment
+              
               x: contentX,
               rotateY: useTransform(mouseX, [-1, 1], [1, -1]),
               rotateX: useTransform(mouseY, [-1, 1], [-1, 1]),
@@ -286,7 +286,7 @@ const About = () => {
               >
                 About{" "}
                 <span className="relative inline-block">
-                  {/* Enhanced glowing effect */}
+                  
                   <motion.span
                     className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 blur-xl opacity-40"
                     animate={{
@@ -394,7 +394,7 @@ const About = () => {
                 </motion.a>
 
                 <motion.a
-                  href="/resume.pdf" 
+                  href="/CV FINAL.pdf" 
                   download
                   className="group relative px-8 py-3.5 overflow-hidden rounded-full"
                   variants={buttonVariants}

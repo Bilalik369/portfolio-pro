@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { Moon, Sun, Menu, X, Send, Home, User, Briefcase, Code, Mail } from "lucide-react"
 import { FaRobot } from "react-icons/fa"
-import Logo from "../assets/trt.png"
+import Logo from "../assets/logon.png"
 
 const Navbar = () => {
   const [darkMode, setDarkMode] = useState(false)
@@ -98,7 +98,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           
           <div className="flex items-center">
-            <img src={Logo} alt="Logo" className="h-16 w-auto mr-2" />
+            <img src={Logo} alt="Logo" className="h-10 w-auto mr-2" />
             
           </div>
 
