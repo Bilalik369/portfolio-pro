@@ -148,22 +148,22 @@ const Contact = () => {
     {
       icon: <FaEnvelope />,
       title: "Email",
-      value: "ikenbilal@gmail.com",
-      link: "mailto:ikenbilal@gmail.com",
+      value: "bilal11ikengmail.com",
+      link: "mailto:bilal11iken@gmail.com",
       color: "from-blue-500 to-blue-600"
     },
     {
       icon: <FaPhone />,
       title: "Phone",
-      value: "+212 6XX XXX XXX",
-      link: "tel:+212XXXXXXX",
+      value: "+212 605228749",
+      link: "tel:+212605228749",
       color: "from-green-500 to-green-600"
     },
     {
       icon: <FaMapMarkerAlt />,
       title: "Location",
-      value: "Morocco",
-      link: "#",
+      value: "Beni Mellal, Morocco",
+      link: "https://www.google.com/maps/place/Beni+Mellal,+Morocco",
       color: "from-purple-500 to-purple-600"
     }
   ]
@@ -172,19 +172,19 @@ const Contact = () => {
     {
       icon: <FaLinkedin />,
       name: "LinkedIn",
-      url: "https://linkedin.com",
+      url: "https://www.linkedin.com/in/bilal-iken-548587332/",
       color: "#0A66C2"
     },
     {
       icon: <FaGithub />,
       name: "GitHub", 
-      url: "https://github.com",
+      url: "https://github.com/Bilalik369",
       color: "#171515"
     },
     {
       icon: <FaInstagram />,
       name: "Instagram",
-      url: "https://instagram.com", 
+      url: "https://www.instagram.com/by.lvl1?igsh=MTYzaDZ4cHhqeW5rZQ==", 
       color: "linear-gradient(45deg, #833AB4, #FD1D1D, #FCB045)"
     }
   ]

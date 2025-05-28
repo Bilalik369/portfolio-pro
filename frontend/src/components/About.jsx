@@ -11,14 +11,14 @@ const About = () => {
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
 
-  // Enhanced intersection observer with higher sensitivity
+  
   const [ref, inView] = useInView({
     threshold: 0.15,
     triggerOnce: false,
     rootMargin: "-50px 0px",
   })
 
-  // Trigger animation sequence when in view
+  
   useEffect(() => {
     if (inView) {
       controls.start("visible")
@@ -27,13 +27,13 @@ const About = () => {
     }
   }, [controls, inView])
 
-  // Track mouse position for enhanced interactivity
+
   useEffect(() => {
     const handleMouseMove = (e) => {
       const { clientX, clientY } = e
       const { innerWidth, innerHeight } = window
       
-      // Normalize mouse position
+      
       mouseX.set((clientX / innerWidth) * 2 - 1)
       mouseY.set((clientY / innerHeight) * 2 - 1)
     }
@@ -42,28 +42,28 @@ const About = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove)
   }, [mouseX, mouseY])
 
-  // Enhanced parallax effects with spring physics
+  
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
   })
 
-  // Smooth scrollYProgress with spring physics
+  
   const smoothScrollProgress = useSpring(scrollYProgress, { 
     damping: 30, 
     stiffness: 100,
     mass: 0.5 
   })
 
-  // Refined parallax transformations - REMOVED y1, y2 for aligned positioning
+ 
   const rotate = useTransform(smoothScrollProgress, [0, 1], [0, 4])
   const opacity = useTransform(smoothScrollProgress, [0, 0.2, 0.8, 1], [0.3, 1, 1, 0.3])
   
-  // Mouse-based subtle effects
+  
   const contentX = useTransform(mouseX, [-1, 1], [3, -3])
   const contentY = useTransform(mouseY, [-1, 1], [3, -3])
 
-  // Enhanced staggered animation variants
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
