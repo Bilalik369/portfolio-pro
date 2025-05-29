@@ -2,7 +2,7 @@ import { useRef, useEffect } from "react"
 import { motion, useScroll, useTransform, useSpring, useMotionValue, useAnimationControls } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { useTheme } from "../context/ThemeContext"
-import Image from "../assets/hhhz.png"
+import Image from "../assets/fina.png"
 
 const About = () => {
   const containerRef = useRef(null)
@@ -206,14 +206,14 @@ const About = () => {
       ref={containerRef}
       className="relative min-h-screen py-20 overflow-hidden bg-gradient-to-b from-white via-slate-50 to-slate-100 dark:from-gray-900 dark:via-gray-900 dark:to-black transition-colors duration-700 pt-28 md:pt-32"
     >
-      {/* Enhanced Background elements */}
+      
       <div className="absolute inset-0 w-full h-full">
-        {/* Dynamic Particles with improved animation */}
+        
         <div className="absolute inset-0 opacity-30">
           {generateParticles(30)}
         </div>
 
-        {/* Enhanced Grid background with subtle animation */}
+    
         <motion.div
           className="absolute inset-0 w-full h-full opacity-[0.03] dark:opacity-[0.03] z-0"
           animate={{
@@ -236,23 +236,23 @@ const About = () => {
       </div>
 
       <div className="container mx-auto px-4 z-10 relative" ref={ref}>
-        {/* Main Content - Modified for better alignment */}
+        
         <motion.div
           className="flex flex-col lg:flex-row items-center justify-center gap-x-16 gap-y-12"
           variants={containerVariants}
           initial="hidden"
           animate={controls}
         >
-          {/* Image Section - Aligned on same x-axis with text */}
+          
           <motion.div 
             className="lg:w-1/2 relative flex items-center justify-center"
             variants={imageVariants}
           >
-            {/* Image container without y-axis animation */}
+            
             <motion.div
-              className="relative rounded-xl overflow-hidden shadow-2xl max-w-md mx-auto lg:mx-0"
+              className="relative max-w-md mx-auto lg:mx-0"
               animate={{
-                x: [0, -5, 0], // Horizontal subtle movement instead of vertical
+                x: [0, -5, 0],
               }}
               transition={{
                 duration: 3,
@@ -264,12 +264,12 @@ const About = () => {
               <img 
                 src={Image || "/placeholder.svg"} 
                 alt="Profile" 
-                className="w-full h-auto rounded-xl" 
+                className="w-full h-auto" 
               />
             </motion.div>
           </motion.div>
 
-          {/* Text Section - Aligned with image on same x-axis */}
+        
           <motion.div 
             className="lg:w-1/2 flex items-center" 
             style={{ 
@@ -314,7 +314,7 @@ const About = () => {
                 </span>
               </motion.h2>
 
-              {/* Animated underline */}
+            
               <motion.div
                 className="w-32 h-1.5 bg-gradient-to-r from-blue-500 to-purple-600 mb-8 rounded-full"
                 variants={itemVariants}
@@ -344,7 +344,6 @@ const About = () => {
                 complete web solutions that exceed expectations and provide <span className="font-medium text-purple-600 dark:text-purple-400">exceptional user experiences</span>.
               </motion.p>
 
-              {/* Enhanced Buttons with Download CV button */}
               <div className="flex flex-wrap gap-5">
                 <motion.a
                   href="#contact"
