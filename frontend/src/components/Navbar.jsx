@@ -189,13 +189,13 @@ const Navbar = () => {
       </button>
 
       <div
-        className={`fixed bottom-20 right-5 w-80 bg-white dark:bg-gray-800 shadow-xl rounded-lg overflow-hidden z-50 transition-all duration-300 transform ${
+        className={`fixed bottom-20 right-5 w-80 bg-gray-800 shadow-xl rounded-lg overflow-hidden z-50 transition-all duration-300 transform ${
           chatOpen
             ? "scale-100 opacity-100"
             : "scale-95 opacity-0 pointer-events-none"
         }`}
       >
-        <div className="bg-blue-600 dark:bg-blue-700 text-white p-3 flex justify-between items-center">
+        <div className="bg-blue-700 text-white p-3 flex justify-between items-center">
           <h3 className="text-lg font-semibold flex items-center">
             <FaRobot className="mr-2" /> Assistant
           </h3>
