@@ -41,7 +41,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleDarkMode = () => setDarkMode(!darkMode);
   const toggleChat = () => setChatOpen(!chatOpen);
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
 
