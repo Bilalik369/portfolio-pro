@@ -105,8 +105,8 @@ const Navbar = () => {
                   }}
                   className={`relative py-2 flex items-center transition-colors duration-300 ${
                     activeSection === link.id
-                      ? "text-blue-600 dark:text-blue-400"
-                      : "text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                      ? "text-blue-400"
+                      : "text-gray-300 hover:text-blue-400"
                   }`}
                 >
                   <span className="mr-2">{link.icon}</span>
