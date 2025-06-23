@@ -112,7 +112,7 @@ const Navbar = () => {
                   <span className="mr-2">{link.icon}</span>
                   {link.label}
                   {activeSection === link.id && (
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 dark:bg-blue-400 rounded-full transform origin-left animate-[growWidth_0.3s_ease]"></span>
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-400 rounded-full transform origin-left animate-[growWidth_0.3s_ease]"></span>
                   )}
                 </a>
               </li>
