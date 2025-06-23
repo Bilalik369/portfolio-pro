@@ -1,70 +1,64 @@
-import { useState, useEffect } from "react"
-import { Moon, Sun, Menu, X, Send, Home, User, Briefcase, Code, Mail } from "lucide-react"
-import { FaRobot } from "react-icons/fa"
-import Logo from "../assets/logon.png"
+import { useState, useEffect } from "react";
+import { Menu, X, Send, Home, User, Briefcase, Code, Mail } from "lucide-react";
+import { FaRobot } from "react-icons/fa";
+import Logo from "../assets/logon.png";
 
 const Navbar = () => {
-  const [darkMode, setDarkMode] = useState(false)
-  const [chatOpen, setChatOpen] = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState("home")
-  const [chatMessages, setChatMessages] = useState([{ text: "Bonjour ! Comment puis-je vous aider ?", isBot: true }])
-  const [userMessage, setUserMessage] = useState("")
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [chatOpen, setChatOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+  const [chatMessages, setChatMessages] = useState([
+    { text: "Bonjour ! Comment puis-je vous aider ?", isBot: true },
+  ]);
+  const [userMessage, setUserMessage] = useState("");
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
-    setDarkMode(prefersDark)
-  }, [])
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", darkMode)
-  }, [darkMode])
+    // Always set dark mode
+    document.documentElement.classList.add("dark");
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
+      setIsScrolled(window.scrollY > 20);
 
-      const sections = ["home", "about", "projects", "skills", "contact"]
+      const sections = ["home", "about", "projects", "skills", "contact"];
       const currentSection = sections.find((section) => {
-        const element = document.getElementById(section)
+        const element = document.getElementById(section);
         if (element) {
-          const rect = element.getBoundingClientRect()
-          return rect.top <= 100 && rect.bottom >= 100
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
         }
-        return false
-      })
+        return false;
+      });
 
       if (currentSection) {
-        setActiveSection(currentSection)
+        setActiveSection(currentSection);
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  const toggleDarkMode = () => setDarkMode(!darkMode)
-  const toggleChat = () => setChatOpen(!chatOpen)
-  const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen)
+  const toggleChat = () => setChatOpen(!chatOpen);
+  const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
 
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId)
+    const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-      setActiveSection(sectionId)
-      setMobileMenuOpen(false)
+      element.scrollIntoView({ behavior: "smooth" });
+      setActiveSection(sectionId);
+      setMobileMenuOpen(false);
     }
-  }
+  };
 
   const handleChatSubmit = (e) => {
-    e.preventDefault()
-    if (!userMessage.trim()) return
+    e.preventDefault();
+    if (!userMessage.trim()) return;
 
-   
-    setChatMessages([...chatMessages, { text: userMessage, isBot: false }])
+    setChatMessages([...chatMessages, { text: userMessage, isBot: false }]);
 
-    
     setTimeout(() => {
       setChatMessages((prev) => [
         ...prev,
@@ -72,11 +66,11 @@ const Navbar = () => {
           text: `Merci pour votre message. Je vais vous répondre concernant "${userMessage}" dès que possible.`,
           isBot: true,
         },
-      ])
-    }, 1000)
+      ]);
+    }, 1000);
 
-    setUserMessage("")
-  }
+    setUserMessage("");
+  };
 
   const navLinks = [
     { id: "home", label: "Home", icon: <Home size={18} /> },
@@ -84,7 +78,7 @@ const Navbar = () => {
     { id: "projects", label: "Projects", icon: <Briefcase size={18} /> },
     { id: "skills", label: "Skills", icon: <Code size={18} /> },
     { id: "contact", label: "Contact", icon: <Mail size={18} /> },
-  ]
+  ];
 
   return (
     <>
@@ -96,21 +90,18 @@ const Navbar = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          
           <div className="flex items-center">
             <img src={Logo} alt="Logo" className="h-10 w-auto mr-2" />
-            
           </div>
 
-          
           <ul className="hidden md:flex space-x-8 font-medium">
             {navLinks.map((link) => (
               <li key={link.id}>
                 <a
                   href={`#${link.id}`}
                   onClick={(e) => {
-                    e.preventDefault()
-                    scrollToSection(link.id)
+                    e.preventDefault();
+                    scrollToSection(link.id);
                   }}
                   className={`relative py-2 flex items-center transition-colors duration-300 ${
                     activeSection === link.id
@@ -129,32 +120,16 @@ const Navbar = () => {
           </ul>
 
           <div className="flex items-center space-x-4">
-            
-            <button
-              onClick={toggleDarkMode}
-              className="relative p-2 rounded-full bg-gray-100 dark:bg-gray-800 transition-colors duration-300"
-              aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
-            >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Sun
-                  className={`w-5 h-5 text-yellow-500 transition-all duration-300 ${darkMode ? "opacity-0 rotate-90 scale-0" : "opacity-100 rotate-0 scale-100"}`}
-                />
-              </div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Moon
-                  className={`w-5 h-5 text-blue-500 transition-all duration-300 ${darkMode ? "opacity-100 rotate-0 scale-100" : "opacity-0 rotate-90 scale-0"}`}
-                />
-              </div>
-              <div className="w-5 h-5 opacity-0">placeholder</div>
-            </button>
-
-            
             <button
               onClick={toggleMobileMenu}
-              className="md:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              className="md:hidden p-2 rounded-lg text-gray-300 hover:bg-gray-800 transition-colors"
               aria-label="Toggle menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
@@ -172,14 +147,16 @@ const Navbar = () => {
                   className="transform transition-transform duration-300"
                   style={{
                     transitionDelay: `${index * 50}ms`,
-                    transform: mobileMenuOpen ? "translateY(0)" : "translateY(20px)",
+                    transform: mobileMenuOpen
+                      ? "translateY(0)"
+                      : "translateY(20px)",
                   }}
                 >
                   <a
                     href={`#${link.id}`}
                     onClick={(e) => {
-                      e.preventDefault()
-                      scrollToSection(link.id)
+                      e.preventDefault();
+                      scrollToSection(link.id);
                     }}
                     className={`flex items-center py-2 px-3 rounded-lg ${
                       activeSection === link.id
@@ -197,7 +174,6 @@ const Navbar = () => {
         </div>
       </nav>
 
-      
       <button
         onClick={toggleChat}
         className={`fixed bottom-5 right-5 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 z-50 ${
@@ -205,13 +181,18 @@ const Navbar = () => {
         }`}
         aria-label="Toggle chatbot"
       >
-        {chatOpen ? <X size={24} /> : <FaRobot size={24} className="animate-pulse" />}
+        {chatOpen ? (
+          <X size={24} />
+        ) : (
+          <FaRobot size={24} className="animate-pulse" />
+        )}
       </button>
 
-   
       <div
         className={`fixed bottom-20 right-5 w-80 bg-white dark:bg-gray-800 shadow-xl rounded-lg overflow-hidden z-50 transition-all duration-300 transform ${
-          chatOpen ? "scale-100 opacity-100" : "scale-95 opacity-0 pointer-events-none"
+          chatOpen
+            ? "scale-100 opacity-100"
+            : "scale-95 opacity-0 pointer-events-none"
         }`}
       >
         <div className="bg-blue-600 dark:bg-blue-700 text-white p-3 flex justify-between items-center">
@@ -229,7 +210,10 @@ const Navbar = () => {
 
         <div className="h-64 overflow-y-auto p-3 bg-gray-50 dark:bg-gray-900">
           {chatMessages.map((msg, index) => (
-            <div key={index} className={`mb-3 max-w-[85%] ${msg.isBot ? "mr-auto" : "ml-auto"}`}>
+            <div
+              key={index}
+              className={`mb-3 max-w-[85%] ${msg.isBot ? "mr-auto" : "ml-auto"}`}
+            >
               <div
                 className={`p-2 rounded-lg ${
                   msg.isBot
@@ -239,14 +223,19 @@ const Navbar = () => {
               >
                 {msg.text}
               </div>
-              <div className={`text-xs mt-1 text-gray-500 ${msg.isBot ? "text-left" : "text-right"}`}>
+              <div
+                className={`text-xs mt-1 text-gray-500 ${msg.isBot ? "text-left" : "text-right"}`}
+              >
                 {msg.isBot ? "Assistant" : "Vous"}
               </div>
             </div>
           ))}
         </div>
 
-        <form onSubmit={handleChatSubmit} className="p-2 border-t border-gray-200 dark:border-gray-700 flex">
+        <form
+          onSubmit={handleChatSubmit}
+          className="p-2 border-t border-gray-200 dark:border-gray-700 flex"
+        >
           <input
             type="text"
             value={userMessage}
@@ -264,7 +253,7 @@ const Navbar = () => {
         </form>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
