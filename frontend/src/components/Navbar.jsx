@@ -208,7 +208,7 @@ const Navbar = () => {
           </button>
         </div>
 
-        <div className="h-64 overflow-y-auto p-3 bg-gray-50 dark:bg-gray-900">
+        <div className="h-64 overflow-y-auto p-3 bg-gray-900">
           {chatMessages.map((msg, index) => (
             <div
               key={index}
