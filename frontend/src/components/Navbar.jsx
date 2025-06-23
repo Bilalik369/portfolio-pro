@@ -217,7 +217,7 @@ const Navbar = () => {
               <div
                 className={`p-2 rounded-lg ${
                   msg.isBot
-                    ? "bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-tl-none"
+                    ? "bg-gray-700 text-gray-200 rounded-tl-none"
                     : "bg-blue-500 text-white rounded-tr-none"
                 }`}
               >
