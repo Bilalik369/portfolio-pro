@@ -1,34 +1,60 @@
-"use client"
+"use client";
 
-import { useRef, useState, useEffect } from "react"
-import { FaGithub, FaLinkedin, FaInstagram, FaCode, FaLaptopCode, FaServer } from "react-icons/fa"
-import { TypeAnimation } from "react-type-animation"
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
-import { useTheme } from "../context/ThemeContext"
-import Image from "../assets/hadik.png"
+import { useRef, useState, useEffect } from "react";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaInstagram,
+  FaCode,
+  FaLaptopCode,
+  FaServer,
+} from "react-icons/fa";
+import { TypeAnimation } from "react-type-animation";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  AnimatePresence,
+} from "framer-motion";
+import { useTheme } from "../context/ThemeContext";
+import Image from "../assets/hadik.png";
 
 const Home = () => {
-  const ref = useRef(null)
-  const [isLoaded, setIsLoaded] = useState(false)
-  const { theme } = useTheme()
+  const ref = useRef(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const { theme } = useTheme();
 
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
-  })
+  });
 
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "200%"])
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "200%"]);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoaded(true)
-    }, 500)
+    // Check if animations have been shown before
+    const animationsShown = localStorage.getItem("portfolio-animations-shown");
 
-    return () => {
-      clearTimeout(timer)
+    if (animationsShown) {
+      // Skip loading animation and go straight to content
+      setIsLoaded(true);
+      setHasAnimated(true);
+    } else {
+      // Show loading animation for first time
+      const timer = setTimeout(() => {
+        setIsLoaded(true);
+        setHasAnimated(true);
+        // Mark animations as shown
+        localStorage.setItem("portfolio-animations-shown", "true");
+      }, 500);
+
+      return () => {
+        clearTimeout(timer);
+      };
     }
-  }, [])
+  }, []);
 
   const fadeIn = (direction, delay) => {
     return {
@@ -48,16 +74,28 @@ const Home = () => {
           ease: [0.25, 0.25, 0.25, 0.75],
         },
       },
-    }
-  }
+    };
+  };
 
   const services = [
-    { icon: <FaCode />, title: "Web Development", color: "from-blue-500 to-blue-600" },
-    { icon: <FaLaptopCode />, title: "Frontend Design", color: "from-purple-500 to-purple-600" },
-    { icon: <FaServer />, title: "Backend Solutions", color: "from-teal-500 to-teal-600" },
-  ]
+    {
+      icon: <FaCode />,
+      title: "Web Development",
+      color: "from-blue-500 to-blue-600",
+    },
+    {
+      icon: <FaLaptopCode />,
+      title: "Frontend Design",
+      color: "from-purple-500 to-purple-600",
+    },
+    {
+      icon: <FaServer />,
+      title: "Backend Solutions",
+      color: "from-teal-500 to-teal-600",
+    },
+  ];
 
-  const buttonGradient = "from-blue-600 to-purple-600"
+  const buttonGradient = "from-blue-600 to-purple-600";
 
   return (
     <>
@@ -153,7 +191,8 @@ const Home = () => {
                     <span
                       className="relative"
                       style={{
-                        background: "linear-gradient(to right, #0071ff, #7c3aed)",
+                        background:
+                          "linear-gradient(to right, #0071ff, #7c3aed)",
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
                       }}
@@ -167,11 +206,22 @@ const Home = () => {
                   variants={fadeIn("up", 0.4)}
                   className="mb-6 text-2xl md:text-3xl lg:text-4xl font-medium leading-tight"
                 >
-                  <span className="text-gray-700 dark:text-gray-200 mr-2 transition-colors duration-500">I am a</span>
+                  <span className="text-gray-700 dark:text-gray-200 mr-2 transition-colors duration-500">
+                    I am a
+                  </span>
                   <span className="relative">
                     <span className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur rounded-lg"></span>
                     <TypeAnimation
-                      sequence={["Developer", 2000, "Designer", 2000, "Programmer", 2000, "Problem Solver", 2000]}
+                      sequence={[
+                        "Developer",
+                        2000,
+                        "Designer",
+                        2000,
+                        "Programmer",
+                        2000,
+                        "Problem Solver",
+                        2000,
+                      ]}
                       speed={50}
                       className="text-blue-600 dark:text-blue-400 font-semibold relative transition-colors duration-500"
                       wrapper="span"
@@ -184,12 +234,16 @@ const Home = () => {
                   variants={fadeIn("up", 0.5)}
                   className="mb-8 text-lg text-gray-600 dark:text-gray-300 leading-relaxed transition-colors duration-500"
                 >
-                  I am passionate about creating beautiful and functional solutions that solve real-world problems
-                  through clean code and intuitive design. With expertise in both frontend and backend technologies, I
-                  deliver complete web solutions.
+                  I am passionate about creating beautiful and functional
+                  solutions that solve real-world problems through clean code
+                  and intuitive design. With expertise in both frontend and
+                  backend technologies, I deliver complete web solutions.
                 </motion.p>
 
-                <motion.div variants={fadeIn("up", 0.55)} className="grid grid-cols-3 gap-4 mb-10">
+                <motion.div
+                  variants={fadeIn("up", 0.55)}
+                  className="grid grid-cols-3 gap-4 mb-10"
+                >
                   {services.map((service, index) => (
                     <div
                       key={index}
@@ -278,7 +332,11 @@ const Home = () => {
               viewport={{ once: false, amount: 0.7 }}
               className="lg:w-1/2 flex justify-center"
             >
-              <img src={Image || "/placeholder.svg"} alt="Profile" className="w-[350px] lg:w-[500px] rounded-xl" />
+              <img
+                src={Image || "/placeholder.svg"}
+                alt="Profile"
+                className="w-[350px] lg:w-[500px] rounded-xl"
+              />
             </motion.div>
           </div>
         </div>
@@ -302,9 +360,10 @@ const Home = () => {
             transform: translateY(0) translateX(0);
           }
         }
-        
+
         @keyframes pulse-slow {
-          0%, 100% {
+          0%,
+          100% {
             transform: scale(1);
             opacity: 0.5;
           }
@@ -313,9 +372,10 @@ const Home = () => {
             opacity: 0.8;
           }
         }
-        
+
         @keyframes pulse-slower {
-          0%, 100% {
+          0%,
+          100% {
             transform: scale(1);
             opacity: 0.3;
           }
@@ -324,25 +384,27 @@ const Home = () => {
             opacity: 0.6;
           }
         }
-        
+
         @keyframes pulse {
-          0%, 100% {
+          0%,
+          100% {
             opacity: 1;
           }
           50% {
             opacity: 0.5;
           }
         }
-        
+
         @keyframes float {
-          0%, 100% {
+          0%,
+          100% {
             transform: translateY(0);
           }
           50% {
             transform: translateY(-10px);
           }
         }
-        
+
         @keyframes rotate {
           from {
             transform: rotate(0deg);
@@ -353,7 +415,7 @@ const Home = () => {
         }
       `}</style>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
