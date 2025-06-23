@@ -160,8 +160,8 @@ const Navbar = () => {
                     }}
                     className={`flex items-center py-2 px-3 rounded-lg ${
                       activeSection === link.id
-                        ? "bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400"
-                        : "text-gray-700 dark:text-gray-300"
+                        ? "bg-blue-900/30 text-blue-400"
+                        : "text-gray-300"
                     }`}
                   >
                     <span className="mr-3">{link.icon}</span>
