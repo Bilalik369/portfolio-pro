@@ -1,0 +1,28 @@
+{
+  "name": "portfolio-fullstack",
+  "version": "1.0.0",
+  "description": "Full-stack portfolio application with React frontend and Express backend",
+  "scripts": {
+    "install": "npm install --prefix frontend && npm install --prefix backend",
+    "install:frontend": "cd frontend && npm install",
+    "install:backend": "cd backend && npm install",
+    "dev": "npm run dev:frontend",
+    "dev:frontend": "cd frontend && npm start",
+    "dev:backend": "cd backend && node server.js",
+    "dev:both": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "build": "cd frontend && npm run build",
+    "start": "npm run dev:frontend",
+    "test": "cd frontend && npm test"
+  },
+  "keywords": [
+    "portfolio",
+    "react",
+    "express",
+    "mongodb"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
