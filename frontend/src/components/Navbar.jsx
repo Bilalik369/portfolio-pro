@@ -139,7 +139,7 @@ const Navbar = () => {
             mobileMenuOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="px-6 py-4 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-t dark:border-gray-800">
+          <div className="px-6 py-4 bg-gray-900/95 backdrop-blur-md border-t border-gray-800">
             <ul className="space-y-3">
               {navLinks.map((link, index) => (
                 <li
