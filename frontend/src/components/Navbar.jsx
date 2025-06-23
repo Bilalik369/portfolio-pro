@@ -234,14 +234,14 @@ const Navbar = () => {
 
         <form
           onSubmit={handleChatSubmit}
-          className="p-2 border-t border-gray-200 dark:border-gray-700 flex"
+          className="p-2 border-t border-gray-700 flex"
         >
           <input
             type="text"
             value={userMessage}
             onChange={(e) => setUserMessage(e.target.value)}
             placeholder="Écrivez votre message..."
-            className="flex-1 p-2 border border-gray-300 dark:border-gray-600 rounded-l-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
+            className="flex-1 p-2 border border-gray-600 rounded-l-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-700 text-white"
           />
           <button
             type="submit"
