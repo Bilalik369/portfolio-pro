@@ -121,28 +121,8 @@ const Navbar = () => {
 
           <div className="flex items-center space-x-4">
             <button
-              onClick={toggleDarkMode}
-              className="relative p-2 rounded-full bg-gray-100 dark:bg-gray-800 transition-colors duration-300"
-              aria-label={
-                darkMode ? "Switch to light mode" : "Switch to dark mode"
-              }
-            >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Sun
-                  className={`w-5 h-5 text-yellow-500 transition-all duration-300 ${darkMode ? "opacity-0 rotate-90 scale-0" : "opacity-100 rotate-0 scale-100"}`}
-                />
-              </div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Moon
-                  className={`w-5 h-5 text-blue-500 transition-all duration-300 ${darkMode ? "opacity-100 rotate-0 scale-100" : "opacity-0 rotate-90 scale-0"}`}
-                />
-              </div>
-              <div className="w-5 h-5 opacity-0">placeholder</div>
-            </button>
-
-            <button
               onClick={toggleMobileMenu}
-              className="md:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              className="md:hidden p-2 rounded-lg text-gray-300 hover:bg-gray-800 transition-colors"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
