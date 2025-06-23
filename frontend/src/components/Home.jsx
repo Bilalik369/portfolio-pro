@@ -100,12 +100,12 @@ const Home = () => {
   return (
     <>
       <AnimatePresence>
-        {!isLoaded && (
+        {!isLoaded && !hasAnimated && (
           <motion.div
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="fixed inset-0 bg-gray-900 dark:bg-gray-950 z-50 flex items-center justify-center"
+            className="fixed inset-0 bg-gray-950 z-50 flex items-center justify-center"
           >
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
