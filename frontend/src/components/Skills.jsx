@@ -21,11 +21,12 @@ import {
   FaHtml5,
   FaCss3Alt,
   FaJs,
-  FaPython,
   FaGithub,
   FaNpm,
   FaBootstrap,
   FaMobile,
+  FaKey,
+  FaEnvelope,
 } from "react-icons/fa";
 import {
   SiMongodb,
@@ -37,15 +38,15 @@ import {
   SiFirebase,
   SiVercel,
   SiJest,
-  SiGraphql,
-  SiMysql,
   SiPostgresql,
   SiRedis,
   SiKubernetes,
   SiFigma,
   SiJquery,
-  SiReactos,
+  SiSocketdotio,
+  SiJsonwebtokens,
 } from "react-icons/si";
+import { BiNetworkChart } from "react-icons/bi";
 
 const Skills = () => {
   const containerRef = useRef(null);
@@ -180,10 +181,12 @@ const Skills = () => {
           level: 75,
           color: "#336791",
         },
-        { name: "MySQL", icon: <SiMysql />, level: 80, color: "#4479A1" },
-        { name: "GraphQL", icon: <SiGraphql />, level: 70, color: "#E10098" },
+        { name: "REST API", icon: <BiNetworkChart />, level: 92, color: "#00D4AA" },
+        { name: "JWT", icon: <SiJsonwebtokens />, level: 88, color: "#000000" },
+        { name: "Socket.IO", icon: <SiSocketdotio />, level: 82, color: "#010101" },
+        { name: "Firebase", icon: <SiFirebase />, level: 80, color: "#FFCA28" },
+        { name: "Nodemailer", icon: <FaEnvelope />, level: 85, color: "#0F9D58" },
         { name: "Redis", icon: <SiRedis />, level: 65, color: "#DC382D" },
-        { name: "Python", icon: <FaPython />, level: 75, color: "#3776AB" },
       ],
     },
     devops: {
