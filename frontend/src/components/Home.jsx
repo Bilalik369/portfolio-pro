@@ -287,7 +287,7 @@ const Home = () => {
 
                 <motion.div variants={fadeIn("up", 0.7)} className="flex gap-5">
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/bilal-iken-548587332/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative w-12 h-12 rounded-full flex items-center justify-center text-xl text-gray-600 dark:text-gray-300 overflow-hidden"
@@ -299,7 +299,7 @@ const Home = () => {
                   </a>
 
                   <a
-                    href="https://github.com"
+                    href="https://github.com/Bilalik369"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative w-12 h-12 rounded-full flex items-center justify-center text-xl text-gray-600 dark:text-gray-300 overflow-hidden"
@@ -311,7 +311,7 @@ const Home = () => {
                   </a>
 
                   <a
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/by.lvl1?igsh=MTYzaDZ4cHhqeW5rZQ=="
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative w-12 h-12 rounded-full flex items-center justify-center text-xl text-gray-600 dark:text-gray-300 overflow-hidden"

@@ -27,6 +27,15 @@ import {
   FaMobile,
   FaKey,
   FaEnvelope,
+  FaTrello,
+  FaUsers,
+  FaLightbulb,
+  FaBullhorn,
+  FaClock,
+  FaHandshake,
+  FaEye,
+  FaBrain,
+  FaHeart,
 } from "react-icons/fa";
 import {
   SiMongodb,
@@ -37,7 +46,6 @@ import {
   SiRedux,
   SiFirebase,
   SiVercel,
-  SiJest,
   SiPostgresql,
   SiRedis,
   SiKubernetes,
@@ -45,6 +53,7 @@ import {
   SiJquery,
   SiSocketdotio,
   SiJsonwebtokens,
+  SiSass,
 } from "react-icons/si";
 import { BiNetworkChart } from "react-icons/bi";
 
@@ -56,11 +65,17 @@ const Skills = () => {
 
   const [activeCategory, setActiveCategory] = useState("frontend");
   const [hoveredSkill, setHoveredSkill] = useState(null);
+  const [selectedSoftSkill, setSelectedSoftSkill] = useState(null);
 
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: false,
     rootMargin: "-50px 0px",
+  });
+
+  const [softSkillsRef, softSkillsInView] = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
   });
 
   useEffect(() => {
@@ -140,7 +155,12 @@ const Skills = () => {
       description: "Building responsive and interactive user interfaces",
       skills: [
         { name: "React", icon: <FaReact />, level: 95, color: "#61DAFB" },
-        { name: "React Native", icon: <FaMobile />, level: 85, color: "#61DAFB" },
+        {
+          name: "React Native",
+          icon: <FaMobile />,
+          level: 80,
+          color: "#61DAFB",
+        },
         {
           name: "TypeScript",
           icon: <SiTypescript />,
@@ -148,16 +168,22 @@ const Skills = () => {
           color: "#3178C6",
         },
         { name: "JavaScript", icon: <FaJs />, level: 95, color: "#F7DF1E" },
-        { name: "HTML5", icon: <FaHtml5 />, level: 98, color: "#E34F26" },
-        { name: "CSS3", icon: <FaCss3Alt />, level: 95, color: "#1572B6" },
+        { name: "HTML5", icon: <FaHtml5 />, level: 90, color: "#E34F26" },
+        { name: "CSS3", icon: <FaCss3Alt />, level: 90, color: "#1572B6" },
+        { name: "Sass", icon: <SiSass />, level: 85, color: "#CC6699" },
         {
           name: "Tailwind CSS",
           icon: <SiTailwindcss />,
           level: 92,
           color: "#06B6D4",
         },
-        { name: "Bootstrap", icon: <FaBootstrap />, level: 88, color: "#7952B3" },
-        { name: "jQuery", icon: <SiJquery />, level: 85, color: "#0769AD" },
+        {
+          name: "Bootstrap",
+          icon: <FaBootstrap />,
+          level: 80,
+          color: "#7952B3",
+        },
+        { name: "jQuery", icon: <SiJquery />, level: 80, color: "#0769AD" },
         { name: "Redux", icon: <SiRedux />, level: 80, color: "#764ABC" },
       ],
     },
@@ -181,11 +207,26 @@ const Skills = () => {
           level: 75,
           color: "#336791",
         },
-        { name: "REST API", icon: <BiNetworkChart />, level: 92, color: "#00D4AA" },
+        {
+          name: "REST API",
+          icon: <BiNetworkChart />,
+          level: 92,
+          color: "#00D4AA",
+        },
         { name: "JWT", icon: <SiJsonwebtokens />, level: 88, color: "#000000" },
-        { name: "Socket.IO", icon: <SiSocketdotio />, level: 82, color: "#010101" },
+        {
+          name: "Socket.IO",
+          icon: <SiSocketdotio />,
+          level: 82,
+          color: "#010101",
+        },
         { name: "Firebase", icon: <SiFirebase />, level: 80, color: "#FFCA28" },
-        { name: "Nodemailer", icon: <FaEnvelope />, level: 85, color: "#0F9D58" },
+        {
+          name: "Nodemailer",
+          icon: <FaEnvelope />,
+          level: 85,
+          color: "#0F9D58",
+        },
         { name: "Redis", icon: <SiRedis />, level: 65, color: "#DC382D" },
       ],
     },
@@ -217,12 +258,119 @@ const Skills = () => {
       skills: [
         { name: "VS Code", icon: <FaCode />, level: 98, color: "#007ACC" },
         { name: "Postman", icon: <SiPostman />, level: 90, color: "#FF6C37" },
-        { name: "Jest", icon: <SiJest />, level: 75, color: "#C21325" },
+        { name: "Trello", icon: <FaTrello />, level: 85, color: "#0079BF" },
         { name: "Figma", icon: <SiFigma />, level: 85, color: "#F24E1E" },
         { name: "npm", icon: <FaNpm />, level: 90, color: "#CB3837" },
       ],
     },
   };
+
+  const softSkillsData = [
+    {
+      name: "Team Leadership",
+      icon: <FaUsers />,
+      color: "#FF6B6B",
+      description:
+        "Experienced in leading development teams, delegating tasks effectively, and fostering a collaborative environment that drives project success and team growth.",
+      details: [
+        "Led cross-functional teams of 5+ developers",
+        "Implemented agile methodologies",
+        "Mentored junior developers",
+        "Resolved team conflicts effectively",
+      ],
+    },
+    {
+      name: "Creative Problem Solving",
+      icon: <FaLightbulb />,
+      color: "#4ECDC4",
+      description:
+        "Approach complex technical challenges with innovative solutions, thinking outside the box to overcome obstacles and optimize performance.",
+      details: [
+        "Designed scalable architecture solutions",
+        "Optimized application performance by 40%",
+        "Created custom tools for team productivity",
+        "Solved critical production issues",
+      ],
+    },
+    {
+      name: "Effective Communication",
+      icon: <FaBullhorn />,
+      color: "#45B7D1",
+      description:
+        "Excellent at translating technical concepts to stakeholders, facilitating clear communication between teams, and presenting ideas persuasively.",
+      details: [
+        "Present to executive stakeholders",
+        "Create technical documentation",
+        "Facilitate team meetings",
+        "Bridge communication gaps",
+      ],
+    },
+    {
+      name: "Time Management",
+      icon: <FaClock />,
+      color: "#96CEB4",
+      description:
+        "Expert at prioritizing tasks, meeting deadlines consistently, and managing multiple projects simultaneously while maintaining quality standards.",
+      details: [
+        "Manage multiple projects concurrently",
+        "Meet 98% of project deadlines",
+        "Optimize workflow processes",
+        "Balance urgent vs important tasks",
+      ],
+    },
+    {
+      name: "Adaptability",
+      icon: <FaHandshake />,
+      color: "#FFEAA7",
+      description:
+        "Quick to adapt to new technologies, changing requirements, and evolving project scopes while maintaining productivity and positive attitude.",
+      details: [
+        "Quickly learn new frameworks",
+        "Adapt to changing requirements",
+        "Work in diverse team environments",
+        "Handle project pivots smoothly",
+      ],
+    },
+    {
+      name: "Attention to Detail",
+      icon: <FaEye />,
+      color: "#DDA0DD",
+      description:
+        "Meticulous approach to code quality, thorough testing, and ensuring pixel-perfect implementations that meet exact specifications.",
+      details: [
+        "Code review expert",
+        "Zero critical bugs in production",
+        "Pixel-perfect UI implementations",
+        "Comprehensive testing strategies",
+      ],
+    },
+    {
+      name: "Critical Thinking",
+      icon: <FaBrain />,
+      color: "#98D8C8",
+      description:
+        "Analytical mindset for evaluating complex problems, making data-driven decisions, and implementing sustainable long-term solutions.",
+      details: [
+        "Analyze complex business requirements",
+        "Make data-driven decisions",
+        "Evaluate technology trade-offs",
+        "Plan scalable architectures",
+      ],
+    },
+    {
+      name: "Emotional Intelligence",
+      icon: <FaHeart />,
+      color: "#F7DC6F",
+      description:
+        "Strong ability to understand team dynamics, manage stress effectively, and maintain positive relationships in high-pressure environments.",
+      details: [
+        "Manage team dynamics",
+        "Handle pressure gracefully",
+        "Empathetic leadership style",
+        "Conflict resolution skills",
+      ],
+    },
+  ];
 
   const categories = [
     { id: "frontend", label: "Frontend", icon: <FaCode /> },
@@ -394,7 +542,7 @@ const Skills = () => {
         </motion.div>
 
         <motion.div
-          className="max-w-6xl mx-auto"
+          className="max-w-6xl mx-auto mb-20"
           style={{ x: contentX, y: contentY }}
         >
           <motion.div
@@ -491,6 +639,234 @@ const Skills = () => {
             </motion.div>
           </motion.div>
         </motion.div>
+
+        {/* Soft Skills Section */}
+        <motion.div
+          ref={softSkillsRef}
+          className="max-w-full mx-auto"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="text-center mb-12">
+            <motion.h3
+              className="text-3xl md:text-4xl font-bold text-white mb-4"
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Soft Skills
+            </motion.h3>
+            <motion.p
+              className="text-gray-300 text-lg"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              Personal and interpersonal skills that drive success
+            </motion.p>
+          </div>
+
+          <div className="relative overflow-hidden">
+            <motion.div
+              className="flex gap-4 pb-4"
+              animate={{
+                x: [0, -2400],
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 30,
+                  ease: "linear",
+                },
+              }}
+              style={{ width: "fit-content" }}
+            >
+              {/* First set of skills */}
+              {softSkillsData.map((skill, index) => (
+                <motion.div
+                  key={`first-${index}`}
+                  className="flex-shrink-0 bg-gray-800/60 backdrop-blur-xl border border-gray-700/50 rounded-xl p-4 shadow-lg min-w-[200px] cursor-pointer hover:border-blue-500/50 transition-all duration-300"
+                  whileHover={{
+                    scale: 1.05,
+                    transition: { type: "spring", stiffness: 400, damping: 10 },
+                  }}
+                  onClick={() => setSelectedSoftSkill(skill)}
+                >
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="text-lg p-2 rounded-lg"
+                      style={{
+                        backgroundColor: `${skill.color}20`,
+                        color: skill.color,
+                      }}
+                    >
+                      {skill.icon}
+                    </div>
+                    <h4 className="text-white font-semibold text-sm hover:text-blue-400 transition-colors">
+                      {skill.name}
+                    </h4>
+                  </div>
+                </motion.div>
+              ))}
+
+              {/* Second set of skills for continuous loop */}
+              {softSkillsData.map((skill, index) => (
+                <motion.div
+                  key={`second-${index}`}
+                  className="flex-shrink-0 bg-gray-800/60 backdrop-blur-xl border border-gray-700/50 rounded-xl p-4 shadow-lg min-w-[200px] cursor-pointer hover:border-blue-500/50 transition-all duration-300"
+                  whileHover={{
+                    scale: 1.05,
+                    transition: { type: "spring", stiffness: 400, damping: 10 },
+                  }}
+                  onClick={() => setSelectedSoftSkill(skill)}
+                >
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="text-lg p-2 rounded-lg"
+                      style={{
+                        backgroundColor: `${skill.color}20`,
+                        color: skill.color,
+                      }}
+                    >
+                      {skill.icon}
+                    </div>
+                    <h4 className="text-white font-semibold text-sm hover:text-blue-400 transition-colors">
+                      {skill.name}
+                    </h4>
+                  </div>
+                </motion.div>
+              ))}
+
+              {/* Third set for smoother loop */}
+              {softSkillsData.map((skill, index) => (
+                <motion.div
+                  key={`third-${index}`}
+                  className="flex-shrink-0 bg-gray-800/60 backdrop-blur-xl border border-gray-700/50 rounded-xl p-4 shadow-lg min-w-[200px] cursor-pointer hover:border-blue-500/50 transition-all duration-300"
+                  whileHover={{
+                    scale: 1.05,
+                    transition: { type: "spring", stiffness: 400, damping: 10 },
+                  }}
+                  onClick={() => setSelectedSoftSkill(skill)}
+                >
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="text-lg p-2 rounded-lg"
+                      style={{
+                        backgroundColor: `${skill.color}20`,
+                        color: skill.color,
+                      }}
+                    >
+                      {skill.icon}
+                    </div>
+                    <h4 className="text-white font-semibold text-sm hover:text-blue-400 transition-colors">
+                      {skill.name}
+                    </h4>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* Skill Detail Modal */}
+        {selectedSoftSkill && (
+          <motion.div
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedSoftSkill(null)}
+          >
+            <motion.div
+              className="bg-gray-800 border border-gray-600 rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Modal Header */}
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-4">
+                  <div
+                    className="text-3xl p-3 rounded-xl"
+                    style={{
+                      backgroundColor: `${selectedSoftSkill.color}20`,
+                      color: selectedSoftSkill.color,
+                    }}
+                  >
+                    {selectedSoftSkill.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">
+                    {selectedSoftSkill.name}
+                  </h3>
+                </div>
+                <button
+                  onClick={() => setSelectedSoftSkill(null)}
+                  className="text-gray-400 hover:text-white p-2 rounded-full hover:bg-gray-700 transition-all duration-200"
+                >
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Modal Content */}
+              <div className="space-y-6">
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  {selectedSoftSkill.description}
+                </p>
+
+                {selectedSoftSkill.details && (
+                  <div>
+                    <h4 className="text-xl font-semibold text-white mb-4">
+                      Key Achievements & Experience
+                    </h4>
+                    <ul className="space-y-3">
+                      {selectedSoftSkill.details.map((detail, index) => (
+                        <motion.li
+                          key={index}
+                          className="flex items-start gap-3 text-gray-300"
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: index * 0.1 }}
+                        >
+                          <div
+                            className="w-2 h-2 rounded-full mt-2 flex-shrink-0"
+                            style={{ backgroundColor: selectedSoftSkill.color }}
+                          />
+                          <span>{detail}</span>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+
+              {/* Modal Footer */}
+              <div className="mt-8 pt-6 border-t border-gray-700">
+                <button
+                  onClick={() => setSelectedSoftSkill(null)}
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-xl transition-colors duration-200"
+                >
+                  Close
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
       </div>
     </section>
   );
