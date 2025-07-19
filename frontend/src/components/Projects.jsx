@@ -2,47 +2,32 @@ import { useRef, useState, useEffect } from "react"
 import { motion, useScroll, useTransform, useSpring, useMotionValue, useAnimationControls } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { useTheme } from "../context/ThemeContext"
-import { FaGithub, FaExternalLinkAlt, FaReact, FaNodeJs, FaJs, FaDatabase, FaCode, FaEye, FaStar, FaMobile, FaDesktop, FaBook, FaBuilding, FaDumbbell, FaFilm, FaTruck, FaChartBar } from "react-icons/fa"
+import { FaGithub, FaExternalLinkAlt, FaReact, FaNodeJs, FaJs, FaDatabase, FaCode, FaEye, FaMobile, FaDesktop, FaBook, FaBuilding, FaDumbbell, FaFilm, FaTruck, FaChartBar } from "react-icons/fa"
 import { SiTailwindcss, SiMongodb, SiExpress, SiTypescript, SiFirebase, SiPostgresql, SiSocketdotio, SiStripe, SiReactrouter, SiJsonwebtokens } from "react-icons/si"
 import troImage from "../assets/tro.png"
 import xprt from "../assets/xpr.png"
 import sprt from "../assets/spor.png";
 import so from "../assets/soon.png"
 import mobil from "../assets/mobll.png"
+import tro from "../assets/image.png"
+
 const Projects = () => {
   const containerRef = useRef(null)
   const { theme } = useTheme()
   const controls = useAnimationControls()
-  const mouseX = useMotionValue(0)
-  const mouseY = useMotionValue(0)
   const [hoveredProject, setHoveredProject] = useState(null)
 
   const [ref, inView] = useInView({
     threshold: 0.1,
-    triggerOnce: false,
+    triggerOnce: true,
     rootMargin: "-50px 0px",
   })
 
   useEffect(() => {
     if (inView) {
       controls.start("visible")
-    } else {
-      controls.start("hidden")
     }
   }, [controls, inView])
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      const { clientX, clientY } = e
-      const { innerWidth, innerHeight } = window
-      
-      mouseX.set((clientX / innerWidth) * 2 - 1)
-      mouseY.set((clientY / innerHeight) * 2 - 1)
-    }
-    
-    window.addEventListener("mousemove", handleMouseMove)
-    return () => window.removeEventListener("mousemove", handleMouseMove)
-  }, [mouseX, mouseY])
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -56,11 +41,10 @@ const Projects = () => {
   })
 
   const backgroundY = useTransform(smoothScrollProgress, [0, 1], ["0%", "100%"])
-  const contentX = useTransform(mouseX, [-1, 1], [10, -10])
-  const contentY = useTransform(mouseY, [-1, 1], [10, -10])
 
   // Vos vrais projets
   const projects = [
+
     {
       id: 1,
       title: "Plateforme de Transport & Livraison",
@@ -79,16 +63,31 @@ const Projects = () => {
       github: "https://github.com",
       live: "https://demo.com",
       category: "Full-Stack",
-      type: "web",
-      featured: true,
-      status: "En développement",
-      stats: {
-        stars: 89,
-        views: 2100
-      }
+      type: "web"
     },
     {
       id: 2,
+      title: "TransportConnect - Plateforme de Logistique",
+      description: "Application web MERN multi-rôles pour la logistique de transport de marchandises. Inclut authentification, création d'annonces, gestion des demandes, évaluations, dashboard administrateur et messagerie temps réel.",
+      image: tro,
+      technologies: [
+        { name: "MongoDB", icon: <SiMongodb />, color: "text-green-600" },
+        { name: "Express", icon: <SiExpress />, color: "text-gray-600" },
+        { name: "React", icon: <FaReact />, color: "text-blue-500" },
+        { name: "Node.js", icon: <FaNodeJs />, color: "text-green-500" },
+        { name: "JWT", icon: <SiJsonwebtokens />, color: "text-purple-500" },
+        { name: "Socket.io", icon: <SiSocketdotio />, color: "text-black dark:text-white" },
+        { name: "Tailwind", icon: <SiTailwindcss />, color: "text-cyan-500" },
+        { name: "Docker", icon: <FaCode />, color: "text-blue-600" }
+      ],
+      github: "https://github.com",
+      live: "https://demo.com",
+      category: "Full-Stack",
+      type: "web"
+    },
+    
+    {
+      id: 3,
       title: "Smart Transformer Dashboard",
       description: "Dashboard intelligent pour la surveillance de transformateurs électriques avec données en temps réel via Socket.io, visualisations interactives avec Chart.js et interface moderne responsive.",
       image: troImage,
@@ -102,16 +101,10 @@ const Projects = () => {
       github: "https://github.com",
       live: "https://demo.com",
       category: "Frontend",
-      type: "web",
-      featured: true,
-      status: "Terminé",
-      stats: {
-        stars: 56,
-        views: 1340
-      }
+      type: "web"
     },
     {
-      id: 3,
+      id: 4,
       title: "Gestion de Projets de Construction",
       description: "Application complète pour la gestion de projets de construction avec suivi des tâches, gestion des équipes, planning interactif, rapports de progression et gestion budgétaire.",
       image: xprt,
@@ -125,16 +118,10 @@ const Projects = () => {
       github: "https://github.com",
       live: "https://demo.com",
       category: "Full-Stack",
-      type: "web",
-      featured: true,
-      status: "Terminé",
-      stats: {
-        stars: 72,
-        views: 1650
-      }
+      type: "web"
     },
     {
-      id: 4,
+      id: 5,
       title: "Plateforme de Gestion de Salle de Sport",
       description: "Système complet de gestion pour salles de sport avec inscription des membres, planning des cours, suivi des abonnements, système de paiement et tableaux de bord analytiques.",
       image: sprt,
@@ -148,36 +135,7 @@ const Projects = () => {
       github: "https://github.com",
       live: "https://demo.com",
       category: "Full-Stack",
-      type: "web",
-      featured: false,
-      status: "Terminé",
-      stats: {
-        stars: false,
-        views: false
-      }
-    },
-    {
-      id: 5,
-      title: "Application de Consultation de Films",
-      description: "Plateforme de streaming et consultation de films avec recherche avancée, recommandations personnalisées, système de notation, listes de favoris et interface utilisateur immersive.",
-      image: "/api/placeholder/600/400",
-      technologies: [
-        { name: "React", icon: <FaReact />, color: "text-blue-500" },
-        { name: "Node.js", icon: <FaNodeJs />, color: "text-green-500" },
-        { name: "MongoDB", icon: <SiMongodb />, color: "text-green-600" },
-        { name: "Express", icon: <SiExpress />, color: "text-gray-600" },
-        { name: "Tailwind", icon: <SiTailwindcss />, color: "text-cyan-500" }
-      ],
-      github: "https://github.com",
-      live: "https://demo.com",
-      category: "Full-Stack",
-      type: "web",
-      featured: false,
-      status: "Terminé",
-      stats: {
-        stars: 38,
-        views: 750
-      }
+      type: "web"
     },
     {
       id: 6,
@@ -193,13 +151,7 @@ const Projects = () => {
       github: "https://github.com",
       live: "https://demo.com",
       category: "Frontend",
-      type: "web",
-      featured: false,
-      status: "Terminé",
-      stats: {
-        stars: 29,
-        views: 520
-      }
+      type: "web"
     },
     {
       id: 7,
@@ -216,13 +168,7 @@ const Projects = () => {
       github: "https://github.com",
       live: "https://play.google.com",
       category: "Mobile",
-      type: "mobile",
-      featured: true,
-      status: "Terminé",
-      stats: {
-        stars: 64,
-        views: 1200
-      }
+      type: "mobile"
     }
   ]
 
@@ -258,30 +204,6 @@ const Projects = () => {
         stiffness: 100,
         damping: 12,
         mass: 0.8,
-      },
-    },
-  }
-
-  const cardVariants = {
-    hidden: { y: 50, opacity: 0, scale: 0.9 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      scale: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 15,
-        mass: 1,
-      },
-    },
-    hover: {
-      y: -8,
-      scale: 1.02,
-      transition: {
-        type: "spring",
-        stiffness: 400,
-        damping: 10,
       },
     },
   }
@@ -326,31 +248,17 @@ const Projects = () => {
     return type === "mobile" ? <FaMobile className="text-blue-500" /> : <FaDesktop className="text-green-500" />
   }
 
-  const getStatusColor = (status) => {
-    switch (status) {
-      case "En développement":
-        return "bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400"
-      case "Terminé":
-        return "bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400"
-      default:
-        return "bg-gray-100 dark:bg-gray-900/30 text-gray-600 dark:text-gray-400"
-    }
-  }
-
   return (
     <section
       id="projects"
       ref={containerRef}
       className="relative min-h-screen py-20 overflow-hidden bg-gradient-to-b from-slate-100 via-white to-slate-50 dark:from-black dark:via-gray-900 dark:to-gray-800 transition-colors duration-700 pt-28 md:pt-32"
     >
-    
       <div className="absolute inset-0 w-full h-full">
-        
         <div className="absolute inset-0 opacity-20">
           {generateParticles(25)}
         </div>
 
-        
         <motion.div
           className="absolute inset-0 w-full h-full opacity-[0.02] dark:opacity-[0.03] z-0"
           animate={{
@@ -371,7 +279,6 @@ const Projects = () => {
           }}
         />
 
-        
         <motion.div
           className="absolute top-1/4 left-10 w-96 h-96 bg-blue-500/10 dark:bg-blue-500/20 rounded-full filter blur-3xl"
           animate={{
@@ -405,7 +312,6 @@ const Projects = () => {
           animate={controls}
           className="text-center mb-16"
         >
-         
           <motion.h2
             className="text-5xl md:text-6xl font-bold mb-4 text-gray-900 dark:text-white"
             variants={itemVariants}
@@ -439,7 +345,6 @@ const Projects = () => {
             </span>
           </motion.h2>
 
-        
           <motion.div
             className="w-40 h-1.5 bg-gradient-to-r from-blue-500 to-purple-600 mb-8 rounded-full mx-auto"
             variants={itemVariants}
@@ -462,7 +367,6 @@ const Projects = () => {
           </motion.p>
         </motion.div>
 
-        
         <motion.div
           className="flex flex-wrap justify-center gap-4 mb-12"
           variants={containerVariants}
@@ -487,87 +391,43 @@ const Projects = () => {
           ))}
         </motion.div>
 
-        
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          animate={controls}
-          style={{ x: contentX, y: contentY }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project) => (
-            <motion.div
+            <div
               key={project.id}
               className="group relative bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50 shadow-lg hover:shadow-2xl transition-all duration-500"
-              variants={cardVariants}
-              whileHover="hover"
-              onHoverStart={() => setHoveredProject(project.id)}
-              onHoverEnd={() => setHoveredProject(null)}
+              onMouseEnter={() => setHoveredProject(project.id)}
+              onMouseLeave={() => setHoveredProject(null)}
             >
-              
-              {project.featured && (
-                <motion.div
-                  className="absolute top-4 left-4 z-20 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.2 }}
-                >
-                  ⭐ Featured
-                </motion.div>
-              )}
-
-              
-              <motion.div
-                className={`absolute top-4 right-4 z-20 px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(project.status)}`}
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 0.3 }}
-              >
-                {project.status}
-              </motion.div>
-
-              
               <div className="relative h-48 overflow-hidden">
-                <motion.img
+                <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700"
-                  whileHover={{ scale: 1.1 }}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
-                
-                <motion.div
-                  className="absolute inset-0 bg-black/60 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 1 }}
-                >
-                  <motion.a
+                <div className="absolute inset-0 bg-black/60 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-white/20 backdrop-blur-sm p-3 rounded-full text-white hover:bg-white/30 transition-colors duration-300"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
                   >
                     <FaGithub size={20} />
-                  </motion.a>
-                  <motion.a
+                  </a>
+                  <a
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-white/20 backdrop-blur-sm p-3 rounded-full text-white hover:bg-white/30 transition-colors duration-300"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
                   >
                     <FaExternalLinkAlt size={20} />
-                  </motion.a>
-                </motion.div>
+                  </a>
+                </div>
               </div>
 
-             
               <div className="p-6">
-                
                 <div className="flex justify-between items-start mb-3">
                   <div className="flex items-center gap-2">
                     {getProjectIcon(project.type)}
@@ -580,22 +440,19 @@ const Projects = () => {
                   </span>
                 </div>
 
-               
                 <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
                   {project.description}
                 </p>
 
-                
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.slice(0, 4).map((tech, index) => (
-                    <motion.div
+                    <div
                       key={index}
                       className={`flex items-center gap-1 px-2 py-1 bg-gray-100 dark:bg-gray-700/50 rounded-md text-xs ${tech.color}`}
-                      whileHover={{ scale: 1.05 }}
                     >
                       {tech.icon}
                       <span className="text-gray-700 dark:text-gray-300">{tech.name}</span>
-                    </motion.div>
+                    </div>
                   ))}
                   {project.technologies.length > 4 && (
                     <div className="flex items-center px-2 py-1 bg-gray-100 dark:bg-gray-700/50 rounded-md text-xs text-gray-600 dark:text-gray-400">
@@ -604,58 +461,29 @@ const Projects = () => {
                   )}
                 </div>
 
-                
-                <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
-                  <div className="flex items-center gap-4">
-                    <div className="flex items-center gap-1">
-                      <FaStar className="text-yellow-500" />
-                      <span>{project.stats.stars}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <FaEye />
-                      <span>{project.stats.views}</span>
-                    </div>
-                  </div>
-                  
-                  
-                  <div className="flex gap-2">
-                    <motion.a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <FaGithub size={16} />
-                    </motion.a>
-                    <motion.a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <FaExternalLinkAlt size={16} />
-                    </motion.a>
-                  </div>
+                <div className="flex gap-2 justify-end">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+                  >
+                    <FaGithub size={16} />
+                  </a>
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+                  >
+                    <FaExternalLinkAlt size={16} />
+                  </a>
                 </div>
               </div>
-
-              
-              <motion.div
-                className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                style={{
-                  background: "linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1))",
-                  filter: "blur(1px)",
-                }}
-              />
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
 
-       
         <motion.div
           className="text-center mt-16"
           variants={itemVariants}
