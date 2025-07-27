@@ -334,7 +334,7 @@ const Contact = () => {
             </span>
           </motion.h2>
 
-          <motion.div
+          <motion.div 
             className="w-32 h-1.5 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8 rounded-full"
             variants={itemVariants}
             whileInView={{

@@ -25,7 +25,7 @@ import {
   FaNpm,
   FaBootstrap,
   FaMobile,
-  FaKey,
+
   FaEnvelope,
   FaTrello,
   FaUsers,
