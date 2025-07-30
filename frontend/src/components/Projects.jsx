@@ -5,10 +5,10 @@ import { useTheme } from "../context/ThemeContext"
 import { FaGithub, FaExternalLinkAlt, FaReact, FaNodeJs, FaJs, FaDatabase, FaCode, FaEye, FaMobile, FaDesktop, FaBook, FaBuilding, FaDumbbell, FaFilm, FaTruck, FaChartBar } from "react-icons/fa"
 import { SiTailwindcss, SiMongodb, SiExpress, SiTypescript, SiFirebase, SiPostgresql, SiSocketdotio, SiStripe, SiReactrouter, SiJsonwebtokens } from "react-icons/si"
 import troImage from "../assets/tro.png"
-import xprt from "../assets/xpr.png"
-import sprt from "../assets/spor.png";
+import xprt from "../assets/cons.jpg"
+import sprt from "../assets/gym.jpg";
 import so from "../assets/soon.png"
-import mobil from "../assets/mobll.png"
+import mobil from "../assets/bbo.jpg"
 import tro from "../assets/image.png"
 
 const Projects = () => {
