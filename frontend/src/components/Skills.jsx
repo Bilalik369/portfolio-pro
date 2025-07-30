@@ -527,7 +527,7 @@ const Skills = () => {
                 onClick={() => setActiveCategory(category.id)}
                 className={`flex items-center gap-3 px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
                   activeCategory === category.id
-                    ? "bg-blue-600 text-white shadow-lg shadow-blue-600/30"
+                    ? "bg-red-600 text-white shadow-lg shadow-red-600/30"
                     : "text-gray-300 hover:text-white hover:bg-gray-700/50"
                 }`}
                 variants={itemVariants}
