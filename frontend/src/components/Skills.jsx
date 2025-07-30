@@ -253,7 +253,7 @@ const Skills = () => {
     tools: {
       title: "Tools & Others",
       icon: <FaTools />,
-      color: "from-purple-500 to-pink-600",
+      color: "from-red-600 to-red-800",
       description: "Development tools and productivity software",
       skills: [
         { name: "VS Code", icon: <FaCode />, level: 98, color: "#007ACC" },
