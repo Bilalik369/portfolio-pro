@@ -859,7 +859,7 @@ const Skills = () => {
               <div className="mt-8 pt-6 border-t border-gray-700">
                 <button
                   onClick={() => setSelectedSoftSkill(null)}
-                  className="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 rounded-xl transition-colors duration-200"
+                  className="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-3 px-6 rounded-xl transition-colors duration-200"
                 >
                   Close
                 </button>
