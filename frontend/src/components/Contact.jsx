@@ -150,7 +150,7 @@ const Contact = () => {
       title: "Email",
       value: "bilal11iken@gmail.com",
       link: "mailto:bilal11iken@gmail.com",
-      color: "from-yellow-500 to-yellow-600"
+      color: "from-amber-200 to-amber-300"
     },
     {
       icon: <FaPhone />,
@@ -164,7 +164,7 @@ const Contact = () => {
       title: "Location",
       value: "Beni Mellal, Morocco",
       link: "https://www.google.com/maps/place/Beni+Mellal,+Morocco",
-      color: "from-yellow-600 to-yellow-700"
+      color: "from-amber-300 to-amber-400"
     }
   ]
 
@@ -200,7 +200,7 @@ const Contact = () => {
       return (
         <motion.div
           key={i}
-          className="absolute rounded-full bg-gradient-to-r from-yellow-500 to-yellow-600 dark:from-yellow-400 dark:to-yellow-600"
+          className="absolute rounded-full bg-gradient-to-r from-amber-200 to-amber-300 dark:from-amber-200 dark:to-amber-300"
           initial={{ 
             opacity: 0,
             x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
@@ -288,8 +288,8 @@ const Contact = () => {
         />
 
         
-        <div className="absolute top-20 left-10 w-64 h-64 bg-yellow-500/5 dark:bg-yellow-500/10 rounded-full filter blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-yellow-600/5 dark:bg-yellow-600/10 rounded-full filter blur-3xl" />
+        <div className="absolute top-20 left-10 w-64 h-64 bg-amber-200/5 dark:bg-amber-200/10 rounded-full filter blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-amber-300/5 dark:bg-amber-300/10 rounded-full filter blur-3xl" />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-teal-500/3 dark:bg-teal-500/8 rounded-full filter blur-3xl" />
       </div>
 
@@ -308,7 +308,7 @@ const Contact = () => {
             Get In{" "}
             <span className="relative inline-block">
               <motion.span
-                className="absolute inset-0 bg-gradient-to-r from-yellow-500 to-yellow-600 blur-xl opacity-40"
+                className="absolute inset-0 blur-xl opacity-40" style={{ background: "linear-gradient(to right, #F3E2D4, #D4B896)" }}
                 animate={{
                   opacity: [0.3, 0.7, 0.3],
                   scale: [1, 1.05, 1],
@@ -324,7 +324,7 @@ const Contact = () => {
               <span
                 className="relative"
                 style={{
-                  background: "linear-gradient(to right, #FFD700, #B8860B)",
+                  background: "linear-gradient(to right, #F3E2D4, #D4B896)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
@@ -335,7 +335,7 @@ const Contact = () => {
           </motion.h2>
 
           <motion.div 
-            className="w-32 h-1.5 bg-gradient-to-r from-yellow-500 to-yellow-600 mx-auto mb-8 rounded-full"
+            className="w-32 h-1.5 bg-gradient-to-r from-amber-200 to-amber-300 mx-auto mb-8 rounded-full"
             variants={itemVariants}
             whileInView={{
               width: ["0%", "100%"],
@@ -392,7 +392,7 @@ const Contact = () => {
                     {info.icon}
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1 group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors">
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
                       {info.title}
                     </h4>
                     <p className="text-gray-600 dark:text-gray-300">{info.value}</p>
@@ -413,7 +413,7 @@ const Contact = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative w-14 h-14 rounded-xl flex items-center justify-center text-xl text-gray-600 dark:text-gray-300 overflow-hidden bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 hover:border-yellow-500/50 transition-all duration-300"
+                    className="group relative w-14 h-14 rounded-xl flex items-center justify-center text-xl text-gray-600 dark:text-gray-300 overflow-hidden bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl border border-gray-200/50 dark:border-gray-700/50 hover:border-amber-300/50 transition-all duration-300"
                     whileHover={{ 
                       scale: 1.1, 
                       rotate: 5,
@@ -455,7 +455,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-white/50 dark:bg-gray-900/50 border border-gray-300/50 dark:border-gray-600/50 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                    className="w-full px-4 py-3 bg-white/50 dark:bg-gray-900/50 border border-gray-300/50 dark:border-gray-600/50 rounded-xl focus:ring-2 focus:ring-amber-300 focus:border-transparent transition-all duration-300 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
                     placeholder="Enter your name"
                   />
                 </motion.div>
@@ -471,7 +471,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-white/50 dark:bg-gray-900/50 border border-gray-300/50 dark:border-gray-600/50 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-300 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
+                    className="w-full px-4 py-3 bg-white/50 dark:bg-gray-900/50 border border-gray-300/50 dark:border-gray-600/50 rounded-xl focus:ring-2 focus:ring-amber-300 focus:border-transparent transition-all duration-300 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
                     placeholder="Enter your email"
                   />
                 </motion.div>
@@ -518,7 +518,7 @@ const Contact = () => {
                   whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                 >
                   <motion.span 
-                    className="absolute inset-0 bg-gradient-to-r from-yellow-600 via-yellow-700 to-yellow-800"
+                    className="absolute inset-0 bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500"
                     whileHover={{
                       backgroundPosition: ["0% 50%", "100% 50%"],
                       transition: { duration: 0.8, ease: "easeInOut" }
@@ -526,7 +526,7 @@ const Contact = () => {
                     style={{ backgroundSize: "200% 200%" }}
                   />
                   <motion.span 
-                    className="absolute inset-0 bg-gradient-to-r from-yellow-600 to-yellow-800 opacity-0 blur-xl"
+                    className="absolute inset-0 bg-gradient-to-r from-amber-300 to-amber-500 opacity-0 blur-xl"
                     whileHover={{
                       opacity: [0, 0.6, 0.4],
                       scale: [1, 1.1, 1.05],
