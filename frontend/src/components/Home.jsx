@@ -185,14 +185,17 @@ const Home = () => {
                   IKEN{" "}
                   <span className="relative inline-block">
                     <span
-                      className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-600 blur-xl opacity-30"
-                      style={{ transform: "translateY(10px) scale(1.05)" }}
+                      className="absolute inset-0 blur-xl opacity-30"
+                      style={{
+                        transform: "translateY(10px) scale(1.05)",
+                        background: "linear-gradient(to right, #F3E2D4, #D4B896)"
+                      }}
                     ></span>
                     <span
                       className="relative"
                       style={{
                         background:
-                          "linear-gradient(to right, #FFD700, #B8860B)",
+                          "linear-gradient(to right, #F3E2D4, #D4B896)",
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
                       }}
