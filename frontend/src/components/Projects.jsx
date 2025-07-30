@@ -492,7 +492,7 @@ const Projects = () => {
         >
           <motion.a
             href="#contact"
-            className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-red-600 to-red-800 text-white rounded-full font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+            className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-yellow-600 to-yellow-700 text-white rounded-full font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
