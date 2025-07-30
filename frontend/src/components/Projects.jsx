@@ -53,7 +53,7 @@ const Projects = () => {
       technologies: [
         { name: "MongoDB", icon: <SiMongodb />, color: "text-green-600" },
         { name: "Express", icon: <SiExpress />, color: "text-gray-600" },
-        { name: "React", icon: <FaReact />, color: "text-blue-500" },
+        { name: "React", icon: <FaReact />, color: "text-purple-500" },
         { name: "Node.js", icon: <FaNodeJs />, color: "text-green-500" },
         { name: "JWT", icon: <SiJsonwebtokens />, color: "text-purple-500" },
         { name: "Stripe", icon: <SiStripe />, color: "text-blue-600" },
@@ -73,7 +73,7 @@ const Projects = () => {
       technologies: [
         { name: "MongoDB", icon: <SiMongodb />, color: "text-green-600" },
         { name: "Express", icon: <SiExpress />, color: "text-gray-600" },
-        { name: "React", icon: <FaReact />, color: "text-blue-500" },
+        { name: "React", icon: <FaReact />, color: "text-purple-500" },
         { name: "Node.js", icon: <FaNodeJs />, color: "text-green-500" },
         { name: "JWT", icon: <SiJsonwebtokens />, color: "text-purple-500" },
         { name: "Socket.io", icon: <SiSocketdotio />, color: "text-black dark:text-white" },
@@ -92,7 +92,7 @@ const Projects = () => {
       description: "Dashboard intelligent pour la surveillance de transformateurs électriques avec données en temps réel via Socket.io, visualisations interactives avec Chart.js et interface moderne responsive.",
       image: troImage,
       technologies: [
-        { name: "React", icon: <FaReact />, color: "text-blue-500" },
+        { name: "React", icon: <FaReact />, color: "text-purple-500" },
         { name: "Socket.io", icon: <SiSocketdotio />, color: "text-black dark:text-white" },
         { name: "Chart.js", icon: <FaChartBar />, color: "text-orange-500" },
         { name: "Tailwind", icon: <SiTailwindcss />, color: "text-cyan-500" },
@@ -109,7 +109,7 @@ const Projects = () => {
       description: "Application complète pour la gestion de projets de construction avec suivi des tâches, gestion des équipes, planning interactif, rapports de progression et gestion budgétaire.",
       image: xprt,
       technologies: [
-        { name: "React", icon: <FaReact />, color: "text-blue-500" },
+        { name: "React", icon: <FaReact />, color: "text-purple-500" },
         { name: "Node.js", icon: <FaNodeJs />, color: "text-green-500" },
         { name: "MongoDB", icon: <SiMongodb />, color: "text-green-600" },
         { name: "Express", icon: <SiExpress />, color: "text-gray-600" },
@@ -126,7 +126,7 @@ const Projects = () => {
       description: "Système complet de gestion pour salles de sport avec inscription des membres, planning des cours, suivi des abonnements, système de paiement et tableaux de bord analytiques.",
       image: sprt,
       technologies: [
-        { name: "React", icon: <FaReact />, color: "text-blue-500" },
+        { name: "React", icon: <FaReact />, color: "text-purple-500" },
         { name: "Node.js", icon: <FaNodeJs />, color: "text-green-500" },
         { name: "MongoDB", icon: <SiMongodb />, color: "text-green-600" },
         { name: "Express", icon: <SiExpress />, color: "text-gray-600" },
@@ -143,7 +143,7 @@ const Projects = () => {
       description: "Site portfolio moderne et interactif avec animations fluides, mode sombre/clair, formulaire de contact fonctionnel, optimisation SEO et design responsive élégant.",
       image: "/api/placeholder/600/400",
       technologies: [
-        { name: "React", icon: <FaReact />, color: "text-blue-500" },
+        { name: "React", icon: <FaReact />, color: "text-purple-500" },
         { name: "Tailwind", icon: <SiTailwindcss />, color: "text-cyan-500" },
         { name: "Framer Motion", icon: <FaCode />, color: "text-purple-500" },
         { name: "JavaScript", icon: <FaJs />, color: "text-yellow-400" }
