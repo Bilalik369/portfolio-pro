@@ -228,7 +228,7 @@ const Home = () => {
                       ]}
                       speed={50}
                       className="font-semibold relative transition-colors duration-500"
-                      style={{ color: "#D4B896" }}
+                      style={{ color: "#C27AFF" }}
                       wrapper="span"
                       repeat={Number.POSITIVE_INFINITY}
                     />
