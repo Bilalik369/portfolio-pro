@@ -151,7 +151,7 @@ const Skills = () => {
     frontend: {
       title: "Frontend Development",
       icon: <FaCode />,
-      color: "from-blue-500 to-purple-600",
+      color: "from-red-500 to-red-800",
       description: "Building responsive and interactive user interfaces",
       skills: [
         { name: "React", icon: <FaReact />, level: 95, color: "#61DAFB" },
