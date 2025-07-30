@@ -595,7 +595,7 @@ const Skills = () => {
                     </div>
                   </div>
 
-                  <h4 className="text-white font-semibold text-center mb-4 group-hover:text-red-400 transition-colors">
+                  <h4 className="text-white font-semibold text-center mb-4 group-hover:text-yellow-400 transition-colors">
                     {skill.name}
                   </h4>
 
