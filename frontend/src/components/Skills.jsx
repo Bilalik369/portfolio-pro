@@ -704,7 +704,7 @@ const Skills = () => {
                     >
                       {skill.icon}
                     </div>
-                    <h4 className="text-white font-semibold text-sm hover:text-blue-400 transition-colors">
+                    <h4 className="text-white font-semibold text-sm hover:text-red-400 transition-colors">
                       {skill.name}
                     </h4>
                   </div>
@@ -732,7 +732,7 @@ const Skills = () => {
                     >
                       {skill.icon}
                     </div>
-                    <h4 className="text-white font-semibold text-sm hover:text-blue-400 transition-colors">
+                    <h4 className="text-white font-semibold text-sm hover:text-red-400 transition-colors">
                       {skill.name}
                     </h4>
                   </div>
@@ -760,7 +760,7 @@ const Skills = () => {
                     >
                       {skill.icon}
                     </div>
-                    <h4 className="text-white font-semibold text-sm hover:text-blue-400 transition-colors">
+                    <h4 className="text-white font-semibold text-sm hover:text-red-400 transition-colors">
                       {skill.name}
                     </h4>
                   </div>
