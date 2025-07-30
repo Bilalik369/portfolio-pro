@@ -319,7 +319,7 @@ const Projects = () => {
             Mes{" "}
             <span className="relative inline-block">
               <motion.span
-                className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-800 blur-xl opacity-40"
+                className="absolute inset-0 bg-gradient-to-r from-yellow-500 to-yellow-600 blur-xl opacity-40"
                 animate={{
                   opacity: [0.3, 0.6, 0.3],
                   scale: [1, 1.1, 1],
