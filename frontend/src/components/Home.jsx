@@ -81,7 +81,7 @@ const Home = () => {
     {
       icon: <FaCode />,
       title: "Web Development",
-      color: "from-yellow-500 to-yellow-600",
+      color: "from-purple-400 to-purple-500",
     },
     {
       icon: <FaLaptopCode />,
