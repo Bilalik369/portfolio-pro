@@ -214,7 +214,7 @@ const Home = () => {
                     I am a
                   </span>
                   <span className="relative">
-                    <span className="absolute -inset-1 bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 blur rounded-lg"></span>
+                    <span className="absolute -inset-1 blur rounded-lg" style={{ background: "linear-gradient(to right, rgba(243, 226, 212, 0.2), rgba(212, 184, 150, 0.2))" }}></span>
                     <TypeAnimation
                       sequence={[
                         "Developer",
