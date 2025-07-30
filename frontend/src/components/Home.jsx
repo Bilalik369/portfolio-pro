@@ -91,7 +91,7 @@ const Home = () => {
     {
       icon: <FaServer />,
       title: "Backend Solutions",
-      color: "from-yellow-700 to-yellow-800",
+      color: "from-purple-600 to-purple-700",
     },
   ];
 
