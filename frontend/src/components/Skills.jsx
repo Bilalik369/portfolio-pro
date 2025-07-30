@@ -151,7 +151,7 @@ const Skills = () => {
     frontend: {
       title: "Frontend Development",
       icon: <FaCode />,
-      color: "from-amber-200 to-amber-300",
+      color: "from-purple-400 to-purple-500",
       description: "Building responsive and interactive user interfaces",
       skills: [
         { name: "React", icon: <FaReact />, level: 95, color: "#61DAFB" },
@@ -253,7 +253,7 @@ const Skills = () => {
     tools: {
       title: "Tools & Others",
       icon: <FaTools />,
-      color: "from-amber-300 to-amber-400",
+      color: "from-purple-500 to-purple-600",
       description: "Development tools and productivity software",
       skills: [
         { name: "VS Code", icon: <FaCode />, level: 98, color: "#007ACC" },
@@ -389,7 +389,7 @@ const Skills = () => {
       return (
         <motion.div
           key={i}
-          className="absolute rounded-full bg-gradient-to-r from-amber-200 to-amber-300 opacity-10"
+          className="absolute rounded-full bg-gradient-to-r from-purple-400 to-purple-500 opacity-10"
           initial={{
             opacity: 0,
             x: Math.random() * 1000,
@@ -447,8 +447,8 @@ const Skills = () => {
           }}
         />
 
-        <div className="absolute top-20 left-10 w-72 h-72 bg-amber-200/10 rounded-full filter blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-amber-300/10 rounded-full filter blur-3xl" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-400/10 rounded-full filter blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full filter blur-3xl" />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-teal-500/8 rounded-full filter blur-3xl" />
       </div>
 
@@ -466,7 +466,7 @@ const Skills = () => {
             My{" "}
             <span className="relative inline-block">
               <motion.span
-                className="absolute inset-0 blur-xl opacity-40" style={{ background: "linear-gradient(to right, #F3E2D4, #D4B896)" }}
+                className="absolute inset-0 blur-xl opacity-40" style={{ background: "linear-gradient(to right, #C27AFF, #9A4DFF)" }}
                 animate={{
                   opacity: [0.3, 0.7, 0.3],
                   scale: [1, 1.05, 1],
@@ -482,7 +482,7 @@ const Skills = () => {
               <span
                 className="relative"
                 style={{
-                  background: "linear-gradient(to right, #F3E2D4, #D4B896)",
+                  background: "linear-gradient(to right, #C27AFF, #9A4DFF)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
@@ -493,7 +493,7 @@ const Skills = () => {
           </motion.h2>
 
           <motion.div
-            className="w-32 h-1.5 bg-gradient-to-r from-amber-200 to-amber-300 mx-auto mb-8 rounded-full"
+            className="w-32 h-1.5 bg-gradient-to-r from-purple-400 to-purple-500 mx-auto mb-8 rounded-full"
             variants={itemVariants}
             whileInView={{
               width: ["0%", "100%"],
@@ -527,7 +527,7 @@ const Skills = () => {
                 onClick={() => setActiveCategory(category.id)}
                 className={`flex items-center gap-3 px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
                   activeCategory === category.id
-                    ? "bg-amber-400 text-white shadow-lg shadow-amber-400/30"
+                    ? "bg-purple-500 text-white shadow-lg shadow-purple-500/30"
                     : "text-gray-300 hover:text-white hover:bg-gray-700/50"
                 }`}
                 variants={itemVariants}
@@ -595,7 +595,7 @@ const Skills = () => {
                     </div>
                   </div>
 
-                  <h4 className="text-white font-semibold text-center mb-4 group-hover:text-amber-300 transition-colors">
+                  <h4 className="text-white font-semibold text-center mb-4 group-hover:text-purple-400 transition-colors">
                     {skill.name}
                   </h4>
 
@@ -704,7 +704,7 @@ const Skills = () => {
                     >
                       {skill.icon}
                     </div>
-                    <h4 className="text-white font-semibold text-sm hover:text-amber-300 transition-colors">
+                    <h4 className="text-white font-semibold text-sm hover:text-purple-400 transition-colors">
                       {skill.name}
                     </h4>
                   </div>
@@ -732,7 +732,7 @@ const Skills = () => {
                     >
                       {skill.icon}
                     </div>
-                    <h4 className="text-white font-semibold text-sm hover:text-amber-300 transition-colors">
+                    <h4 className="text-white font-semibold text-sm hover:text-purple-400 transition-colors">
                       {skill.name}
                     </h4>
                   </div>
@@ -760,7 +760,7 @@ const Skills = () => {
                     >
                       {skill.icon}
                     </div>
-                    <h4 className="text-white font-semibold text-sm hover:text-amber-300 transition-colors">
+                    <h4 className="text-white font-semibold text-sm hover:text-purple-400 transition-colors">
                       {skill.name}
                     </h4>
                   </div>
@@ -859,7 +859,7 @@ const Skills = () => {
               <div className="mt-8 pt-6 border-t border-gray-700">
                 <button
                   onClick={() => setSelectedSoftSkill(null)}
-                  className="w-full bg-amber-400 hover:bg-amber-500 text-white font-medium py-3 px-6 rounded-xl transition-colors duration-200"
+                  className="w-full bg-purple-500 hover:bg-purple-600 text-white font-medium py-3 px-6 rounded-xl transition-colors duration-200"
                 >
                   Close
                 </button>
