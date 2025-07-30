@@ -482,7 +482,7 @@ const Skills = () => {
               <span
                 className="relative"
                 style={{
-                  background: "linear-gradient(to right, #0071ff, #7c3aed)",
+                  background: "linear-gradient(to right, #FF4D4D, #B30000)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
