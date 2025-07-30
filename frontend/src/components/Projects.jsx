@@ -78,7 +78,7 @@ const Projects = () => {
         { name: "JWT", icon: <SiJsonwebtokens />, color: "text-purple-500" },
         { name: "Socket.io", icon: <SiSocketdotio />, color: "text-black dark:text-white" },
         { name: "Tailwind", icon: <SiTailwindcss />, color: "text-cyan-500" },
-        { name: "Docker", icon: <FaCode />, color: "text-blue-600" }
+        { name: "Docker", icon: <FaCode />, color: "text-purple-600" }
       ],
       github: "https://github.com",
       live: "https://demo.com",
