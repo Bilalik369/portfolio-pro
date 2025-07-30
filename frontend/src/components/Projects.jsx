@@ -292,7 +292,7 @@ const Projects = () => {
           }}
         />
         <motion.div
-          className="absolute bottom-1/4 right-10 w-96 h-96 bg-red-800/10 dark:bg-red-800/20 rounded-full filter blur-3xl"
+          className="absolute bottom-1/4 right-10 w-96 h-96 bg-yellow-600/10 dark:bg-yellow-600/20 rounded-full filter blur-3xl"
           animate={{
             scale: [1.2, 1, 1.2],
             opacity: [0.4, 0.7, 0.4],
