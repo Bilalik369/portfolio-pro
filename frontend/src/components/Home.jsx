@@ -154,8 +154,8 @@ const Home = () => {
             style={{ y: backgroundY }}
             className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-slate-200/10 to-slate-300/30 dark:from-black/10 dark:to-black/30 z-0 transition-colors duration-500"
           />
-          <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-500/5 dark:bg-yellow-500/10 rounded-full filter blur-3xl transition-colors duration-500" />
-          <div className="absolute bottom-20 right-10 w-72 h-72 bg-yellow-600/5 dark:bg-yellow-600/10 rounded-full filter blur-3xl transition-colors duration-500" />
+          <div className="absolute top-20 left-10 w-72 h-72 rounded-full filter blur-3xl transition-colors duration-500" style={{ backgroundColor: "rgba(243, 226, 212, 0.05)" }} />
+          <div className="absolute bottom-20 right-10 w-72 h-72 rounded-full filter blur-3xl transition-colors duration-500" style={{ backgroundColor: "rgba(212, 184, 150, 0.05)" }} />
         </div>
 
         <div
