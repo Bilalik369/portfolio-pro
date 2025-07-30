@@ -280,7 +280,7 @@ const Projects = () => {
         />
 
         <motion.div
-          className="absolute top-1/4 left-10 w-96 h-96 bg-blue-500/10 dark:bg-blue-500/20 rounded-full filter blur-3xl"
+          className="absolute top-1/4 left-10 w-96 h-96 bg-red-500/10 dark:bg-red-500/20 rounded-full filter blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.6, 0.3],
