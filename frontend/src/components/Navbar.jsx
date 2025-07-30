@@ -105,14 +105,14 @@ const Navbar = () => {
                   }}
                   className={`relative py-2 flex items-center transition-colors duration-300 ${
                     activeSection === link.id
-                      ? "text-red-400"
-                      : "text-gray-300 hover:text-red-400"
+                      ? "text-yellow-400"
+                      : "text-gray-300 hover:text-yellow-400"
                   }`}
                 >
                   <span className="mr-2">{link.icon}</span>
                   {link.label}
                   {activeSection === link.id && (
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-red-400 rounded-full transform origin-left animate-[growWidth_0.3s_ease]"></span>
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-yellow-400 rounded-full transform origin-left animate-[growWidth_0.3s_ease]"></span>
                   )}
                 </a>
               </li>
@@ -160,7 +160,7 @@ const Navbar = () => {
                     }}
                     className={`flex items-center py-2 px-3 rounded-lg ${
                       activeSection === link.id
-                        ? "bg-red-900/30 text-red-400"
+                        ? "bg-yellow-900/30 text-yellow-400"
                         : "text-gray-300"
                     }`}
                   >
@@ -176,8 +176,8 @@ const Navbar = () => {
 
       <button
         onClick={toggleChat}
-        className={`fixed bottom-5 right-5 bg-red-600 text-white p-4 rounded-full shadow-lg hover:bg-red-700 transition-all duration-300 z-50 ${
-          chatOpen ? "rotate-180 bg-red-500 hover:bg-red-600" : ""
+        className={`fixed bottom-5 right-5 bg-yellow-600 text-white p-4 rounded-full shadow-lg hover:bg-yellow-700 transition-all duration-300 z-50 ${
+          chatOpen ? "rotate-180 bg-yellow-500 hover:bg-yellow-600" : ""
         }`}
         aria-label="Toggle chatbot"
       >
@@ -195,7 +195,7 @@ const Navbar = () => {
             : "scale-95 opacity-0 pointer-events-none"
         }`}
       >
-        <div className="bg-red-700 text-white p-3 flex justify-between items-center">
+        <div className="bg-yellow-700 text-white p-3 flex justify-between items-center">
           <h3 className="text-lg font-semibold flex items-center">
             <FaRobot className="mr-2" /> Assistant
           </h3>
@@ -218,7 +218,7 @@ const Navbar = () => {
                 className={`p-2 rounded-lg ${
                   msg.isBot
                     ? "bg-gray-700 text-gray-200 rounded-tl-none"
-                    : "bg-red-500 text-white rounded-tr-none"
+                    : "bg-yellow-500 text-white rounded-tr-none"
                 }`}
               >
                 {msg.text}
@@ -241,11 +241,11 @@ const Navbar = () => {
             value={userMessage}
             onChange={(e) => setUserMessage(e.target.value)}
             placeholder="Écrivez votre message..."
-            className="flex-1 p-2 border border-gray-600 rounded-l-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500 bg-gray-700 text-white"
+            className="flex-1 p-2 border border-gray-600 rounded-l-lg text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 bg-gray-700 text-white"
           />
           <button
             type="submit"
-            className="bg-red-600 text-white p-2 rounded-r-lg hover:bg-red-700 transition-colors"
+            className="bg-yellow-600 text-white p-2 rounded-r-lg hover:bg-yellow-700 transition-colors"
             disabled={!userMessage.trim()}
           >
             <Send size={18} />
