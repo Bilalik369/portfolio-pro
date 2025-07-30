@@ -135,7 +135,8 @@ const Home = () => {
               {[...Array(20)].map((_, i) => (
                 <div
                   key={i}
-                  className="absolute rounded-full bg-yellow-500 dark:bg-yellow-400"
+                  className="absolute rounded-full"
+                  style={{ backgroundColor: "#F3E2D4" }}
                   style={{
                     top: `${Math.random() * 100}%`,
                     left: `${Math.random() * 100}%`,
