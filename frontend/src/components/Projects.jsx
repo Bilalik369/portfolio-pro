@@ -245,7 +245,7 @@ const Projects = () => {
   }
 
   const getProjectIcon = (type) => {
-    return type === "mobile" ? <FaMobile className="text-blue-500" /> : <FaDesktop className="text-green-500" />
+    return type === "mobile" ? <FaMobile className="text-purple-500" /> : <FaDesktop className="text-purple-600" />
   }
 
   return (
