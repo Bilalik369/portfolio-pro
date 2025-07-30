@@ -217,7 +217,7 @@ const Projects = () => {
       return (
         <motion.div
           key={i}
-          className="absolute rounded-full bg-gradient-to-r from-yellow-500 to-yellow-600 dark:from-yellow-400 dark:to-yellow-600"
+          className="absolute rounded-full bg-gradient-to-r from-amber-200 to-amber-300 dark:from-amber-200 dark:to-amber-300"
           initial={{ 
             opacity: 0,
             x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
@@ -280,7 +280,7 @@ const Projects = () => {
         />
 
         <motion.div
-          className="absolute top-1/4 left-10 w-96 h-96 bg-yellow-500/10 dark:bg-yellow-500/20 rounded-full filter blur-3xl"
+          className="absolute top-1/4 left-10 w-96 h-96 bg-amber-200/10 dark:bg-amber-200/20 rounded-full filter blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.6, 0.3],
@@ -292,7 +292,7 @@ const Projects = () => {
           }}
         />
         <motion.div
-          className="absolute bottom-1/4 right-10 w-96 h-96 bg-yellow-600/10 dark:bg-yellow-600/20 rounded-full filter blur-3xl"
+          className="absolute bottom-1/4 right-10 w-96 h-96 bg-amber-300/10 dark:bg-amber-300/20 rounded-full filter blur-3xl"
           animate={{
             scale: [1.2, 1, 1.2],
             opacity: [0.4, 0.7, 0.4],
@@ -319,7 +319,8 @@ const Projects = () => {
             Mes{" "}
             <span className="relative inline-block">
               <motion.span
-                className="absolute inset-0 bg-gradient-to-r from-yellow-500 to-yellow-600 blur-xl opacity-40"
+                className="absolute inset-0 blur-xl opacity-40"
+                style={{ background: "linear-gradient(to right, #F3E2D4, #D4B896)" }}
                 animate={{
                   opacity: [0.3, 0.6, 0.3],
                   scale: [1, 1.1, 1],
@@ -335,7 +336,7 @@ const Projects = () => {
               <span
                 className="relative"
                 style={{
-                  background: "linear-gradient(to right, #FFD700, #B8860B)",
+                  background: "linear-gradient(to right, #F3E2D4, #D4B896)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
@@ -346,7 +347,7 @@ const Projects = () => {
           </motion.h2>
 
           <motion.div
-            className="w-40 h-1.5 bg-gradient-to-r from-yellow-500 to-yellow-600 mb-8 rounded-full mx-auto"
+            className="w-40 h-1.5 bg-gradient-to-r from-amber-200 to-amber-300 mb-8 rounded-full mx-auto"
             variants={itemVariants}
             whileInView={{
               width: ["0%", "100%"],
@@ -379,7 +380,7 @@ const Projects = () => {
               onClick={() => setActiveCategory(category)}
               className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                 activeCategory === category
-                  ? "bg-gradient-to-r from-yellow-600 to-yellow-700 text-white shadow-lg"
+                  ? "bg-gradient-to-r from-amber-300 to-amber-400 text-white shadow-lg"
                   : "bg-white/50 dark:bg-gray-800/50 text-gray-600 dark:text-gray-300 hover:bg-white/80 dark:hover:bg-gray-800/80 border border-gray-200 dark:border-gray-700"
               }`}
               variants={itemVariants}
@@ -492,7 +493,7 @@ const Projects = () => {
         >
           <motion.a
             href="#contact"
-            className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-yellow-600 to-yellow-700 text-white rounded-full font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+            className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-amber-300 to-amber-400 text-white rounded-full font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
