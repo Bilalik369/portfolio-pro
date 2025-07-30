@@ -56,7 +56,7 @@ const Projects = () => {
         { name: "React", icon: <FaReact />, color: "text-purple-500" },
         { name: "Node.js", icon: <FaNodeJs />, color: "text-green-500" },
         { name: "JWT", icon: <SiJsonwebtokens />, color: "text-purple-500" },
-        { name: "Stripe", icon: <SiStripe />, color: "text-blue-600" },
+        { name: "Stripe", icon: <SiStripe />, color: "text-purple-600" },
         { name: "Firebase", icon: <SiFirebase />, color: "text-orange-500" },
         { name: "Tailwind", icon: <SiTailwindcss />, color: "text-cyan-500" }
       ],
