@@ -284,7 +284,8 @@ const Home = () => {
                       repeat: Number.POSITIVE_INFINITY,
                       repeatType: "reverse",
                     }}
-                    className="text-2xl font-bold bg-gradient-to-r from-yellow-400 via-yellow-600 to-yellow-700 bg-clip-text text-transparent"
+                    className="text-2xl font-bold bg-clip-text text-transparent"
+                    style={{ background: "linear-gradient(to right, #F3E2D4, #D4B896, #C4A373)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
                   >
                     Let's work together and make something great.
                   </motion.p>
