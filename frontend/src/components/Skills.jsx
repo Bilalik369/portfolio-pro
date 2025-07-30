@@ -389,7 +389,7 @@ const Skills = () => {
       return (
         <motion.div
           key={i}
-          className="absolute rounded-full bg-gradient-to-r from-blue-500 to-purple-500 opacity-10"
+          className="absolute rounded-full bg-gradient-to-r from-red-500 to-red-800 opacity-10"
           initial={{
             opacity: 0,
             x: Math.random() * 1000,
