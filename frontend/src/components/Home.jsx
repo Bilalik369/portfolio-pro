@@ -17,7 +17,7 @@ import {
   AnimatePresence,
 } from "framer-motion";
 import { useTheme } from "../context/ThemeContext";
-import Image from "../assets/hadik.png";
+import Image from "../assets/GINA.png";
 
 const Home = () => {
   const ref = useRef(null);
@@ -81,7 +81,7 @@ const Home = () => {
     {
       icon: <FaCode />,
       title: "Web Development",
-      color: "from-blue-500 to-blue-600",
+      color: "from-purple-400 to-purple-500",
     },
     {
       icon: <FaLaptopCode />,
@@ -91,11 +91,11 @@ const Home = () => {
     {
       icon: <FaServer />,
       title: "Backend Solutions",
-      color: "from-teal-500 to-teal-600",
+      color: "from-purple-600 to-purple-700",
     },
   ];
 
-  const buttonGradient = "from-blue-600 to-purple-600";
+  const buttonGradient = "from-purple-500 to-purple-600";
 
   return (
     <>
@@ -114,8 +114,8 @@ const Home = () => {
               transition={{ duration: 0.5 }}
               className="text-center"
             >
-              <div className="w-24 h-24 border-t-4 border-blue-500 border-solid rounded-full animate-spin mb-6 mx-auto"></div>
-              <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+              <div className="w-24 h-24 border-t-4 border-solid rounded-full animate-spin mb-6 mx-auto" style={{ borderTopColor: "#C27AFF" }}></div>
+              <h2 className="text-2xl font-bold bg-clip-text text-transparent" style={{ background: "linear-gradient(to right, #C27AFF, #9A4DFF)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 Loading Portfolio
               </h2>
             </motion.div>
@@ -135,7 +135,8 @@ const Home = () => {
               {[...Array(20)].map((_, i) => (
                 <div
                   key={i}
-                  className="absolute rounded-full bg-blue-500 dark:bg-blue-400"
+                  className="absolute rounded-full"
+                  style={{ backgroundColor: "#C27AFF" }}
                   style={{
                     top: `${Math.random() * 100}%`,
                     left: `${Math.random() * 100}%`,
@@ -153,8 +154,8 @@ const Home = () => {
             style={{ y: backgroundY }}
             className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-slate-200/10 to-slate-300/30 dark:from-black/10 dark:to-black/30 z-0 transition-colors duration-500"
           />
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/5 dark:bg-blue-500/10 rounded-full filter blur-3xl transition-colors duration-500" />
-          <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-500/5 dark:bg-purple-500/10 rounded-full filter blur-3xl transition-colors duration-500" />
+          <div className="absolute top-20 left-10 w-72 h-72 rounded-full filter blur-3xl transition-colors duration-500" style={{ backgroundColor: "rgba(194, 122, 255, 0.05)" }} />
+          <div className="absolute bottom-20 right-10 w-72 h-72 rounded-full filter blur-3xl transition-colors duration-500" style={{ backgroundColor: "rgba(154, 77, 255, 0.05)" }} />
         </div>
 
         <div
@@ -185,14 +186,17 @@ const Home = () => {
                   IKEN{" "}
                   <span className="relative inline-block">
                     <span
-                      className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 blur-xl opacity-30"
-                      style={{ transform: "translateY(10px) scale(1.05)" }}
+                      className="absolute inset-0 blur-xl opacity-30"
+                      style={{
+                        transform: "translateY(10px) scale(1.05)",
+                        background: "linear-gradient(to right, #C27AFF, #9A4DFF)"
+                      }}
                     ></span>
                     <span
                       className="relative"
                       style={{
                         background:
-                          "linear-gradient(to right, #0071ff, #7c3aed)",
+                          "linear-gradient(to right, #C27AFF, #9A4DFF)",
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
                       }}
@@ -210,7 +214,7 @@ const Home = () => {
                     I am a
                   </span>
                   <span className="relative">
-                    <span className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur rounded-lg"></span>
+                    <span className="absolute -inset-1 blur rounded-lg" style={{ background: "linear-gradient(to right, rgba(194, 122, 255, 0.2), rgba(154, 77, 255, 0.2))" }}></span>
                     <TypeAnimation
                       sequence={[
                         "Developer",
@@ -223,7 +227,8 @@ const Home = () => {
                         2000,
                       ]}
                       speed={50}
-                      className="text-blue-600 dark:text-blue-400 font-semibold relative transition-colors duration-500"
+                      className="font-semibold relative transition-colors duration-500"
+                      style={{ color: "#C27AFF" }}
                       wrapper="span"
                       repeat={Number.POSITIVE_INFINITY}
                     />
@@ -247,7 +252,7 @@ const Home = () => {
                   {services.map((service, index) => (
                     <div
                       key={index}
-                      className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-xl p-3 text-center hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105 shadow-sm hover:shadow-md"
+                      className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-xl p-3 text-center hover:border-yellow-500/50 transition-all duration-300 hover:transform hover:scale-105 shadow-sm hover:shadow-md"
                     >
                       <div
                         className={`w-10 h-10 mx-auto mb-2 rounded-lg bg-gradient-to-r ${service.color} flex items-center justify-center text-white`}
@@ -269,9 +274,9 @@ const Home = () => {
                       opacity: 1,
                       scale: 1,
                       textShadow: [
-                        "0px 0px 0px rgba(123, 58, 237, 0)",
-                        "0px 0px 12px rgba(123, 58, 237, 0.7)",
-                        "0px 0px 0px rgba(123, 58, 237, 0)",
+                        "0px 0px 0px rgba(184, 134, 11, 0)",
+                        "0px 0px 12px rgba(184, 134, 11, 0.7)",
+                        "0px 0px 0px rgba(184, 134, 11, 0)",
                       ],
                     }}
                     transition={{
@@ -279,7 +284,8 @@ const Home = () => {
                       repeat: Number.POSITIVE_INFINITY,
                       repeatType: "reverse",
                     }}
-                    className="text-2xl font-bold bg-gradient-to-r from-emerald-400 via-purple-500 to-pink-600 bg-clip-text text-transparent"
+                    className="text-2xl font-bold bg-clip-text text-transparent"
+                    style={{ background: "linear-gradient(to right, #C27AFF, #9A4DFF, #7B2BFF)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
                   >
                     Let's work together and make something great.
                   </motion.p>
