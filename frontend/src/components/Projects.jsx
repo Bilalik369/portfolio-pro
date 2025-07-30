@@ -217,7 +217,7 @@ const Projects = () => {
       return (
         <motion.div
           key={i}
-          className="absolute rounded-full bg-gradient-to-r from-red-500 to-red-800 dark:from-red-400 dark:to-red-700"
+          className="absolute rounded-full bg-gradient-to-r from-yellow-500 to-yellow-600 dark:from-yellow-400 dark:to-yellow-600"
           initial={{ 
             opacity: 0,
             x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
