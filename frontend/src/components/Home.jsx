@@ -114,8 +114,8 @@ const Home = () => {
               transition={{ duration: 0.5 }}
               className="text-center"
             >
-              <div className="w-24 h-24 border-t-4 border-yellow-500 border-solid rounded-full animate-spin mb-6 mx-auto"></div>
-              <h2 className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
+              <div className="w-24 h-24 border-t-4 border-solid rounded-full animate-spin mb-6 mx-auto" style={{ borderTopColor: "#F3E2D4" }}></div>
+              <h2 className="text-2xl font-bold bg-clip-text text-transparent" style={{ background: "linear-gradient(to right, #F3E2D4, #D4B896)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 Loading Portfolio
               </h2>
             </motion.div>
