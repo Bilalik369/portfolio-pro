@@ -346,7 +346,7 @@ const Projects = () => {
           </motion.h2>
 
           <motion.div
-            className="w-40 h-1.5 bg-gradient-to-r from-blue-500 to-purple-600 mb-8 rounded-full mx-auto"
+            className="w-40 h-1.5 bg-gradient-to-r from-red-500 to-red-800 mb-8 rounded-full mx-auto"
             variants={itemVariants}
             whileInView={{
               width: ["0%", "100%"],
