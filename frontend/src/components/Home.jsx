@@ -86,7 +86,7 @@ const Home = () => {
     {
       icon: <FaLaptopCode />,
       title: "Frontend Design",
-      color: "from-yellow-600 to-yellow-700",
+      color: "from-purple-500 to-purple-600",
     },
     {
       icon: <FaServer />,
