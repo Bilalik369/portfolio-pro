@@ -335,7 +335,7 @@ const Projects = () => {
               <span
                 className="relative"
                 style={{
-                  background: "linear-gradient(to right, #FF4D4D, #B30000)",
+                  background: "linear-gradient(to right, #FFD700, #B8860B)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
