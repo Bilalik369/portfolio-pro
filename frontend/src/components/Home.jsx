@@ -136,7 +136,7 @@ const Home = () => {
                 <div
                   key={i}
                   className="absolute rounded-full"
-                  style={{ backgroundColor: "#F3E2D4" }}
+                  style={{ backgroundColor: "#C27AFF" }}
                   style={{
                     top: `${Math.random() * 100}%`,
                     left: `${Math.random() * 100}%`,
