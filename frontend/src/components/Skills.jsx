@@ -493,7 +493,7 @@ const Skills = () => {
           </motion.h2>
 
           <motion.div
-            className="w-32 h-1.5 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8 rounded-full"
+            className="w-32 h-1.5 bg-gradient-to-r from-red-500 to-red-800 mx-auto mb-8 rounded-full"
             variants={itemVariants}
             whileInView={{
               width: ["0%", "100%"],
