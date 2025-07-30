@@ -189,14 +189,14 @@ const Home = () => {
                       className="absolute inset-0 blur-xl opacity-30"
                       style={{
                         transform: "translateY(10px) scale(1.05)",
-                        background: "linear-gradient(to right, #F3E2D4, #D4B896)"
+                        background: "linear-gradient(to right, #C27AFF, #9A4DFF)"
                       }}
                     ></span>
                     <span
                       className="relative"
                       style={{
                         background:
-                          "linear-gradient(to right, #F3E2D4, #D4B896)",
+                          "linear-gradient(to right, #C27AFF, #9A4DFF)",
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
                       }}
