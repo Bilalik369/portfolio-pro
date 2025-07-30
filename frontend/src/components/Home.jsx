@@ -285,7 +285,7 @@ const Home = () => {
                       repeatType: "reverse",
                     }}
                     className="text-2xl font-bold bg-clip-text text-transparent"
-                    style={{ background: "linear-gradient(to right, #F3E2D4, #D4B896, #C4A373)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
+                    style={{ background: "linear-gradient(to right, #C27AFF, #9A4DFF, #7B2BFF)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
                   >
                     Let's work together and make something great.
                   </motion.p>
