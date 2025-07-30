@@ -147,7 +147,7 @@ const About = () => {
       return (
         <motion.div
           key={i}
-          className="absolute rounded-full bg-gradient-to-r from-red-500 to-red-800 dark:from-red-400 dark:to-red-700"
+          className="absolute rounded-full bg-gradient-to-r from-yellow-500 to-yellow-600 dark:from-yellow-400 dark:to-yellow-600"
           initial={{ 
             opacity: 0,
             x: Math.random() * window.innerWidth,
@@ -288,7 +288,7 @@ const About = () => {
                 <span className="relative inline-block">
                   
                   <motion.span
-                    className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-800 blur-xl opacity-40"
+                    className="absolute inset-0 bg-gradient-to-r from-yellow-500 to-yellow-600 blur-xl opacity-40"
                     animate={{
                       opacity: [0.3, 0.6, 0.3],
                       scale: [1, 1.1, 1],
@@ -304,7 +304,7 @@ const About = () => {
                   <span
                     className="relative"
                     style={{
-                      background: "linear-gradient(to right, #FF4D4D, #B30000)",
+                      background: "linear-gradient(to right, #FFD700, #B8860B)",
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                     }}
@@ -316,7 +316,7 @@ const About = () => {
 
             
               <motion.div
-                className="w-32 h-1.5 bg-gradient-to-r from-red-500 to-red-800 mb-8 rounded-full"
+                className="w-32 h-1.5 bg-gradient-to-r from-yellow-500 to-yellow-600 mb-8 rounded-full"
                 variants={itemVariants}
                 whileInView={{
                   width: ["0%", "100%"],
@@ -332,16 +332,16 @@ const About = () => {
                 className="text-2xl font-semibold mb-5 text-gray-800 dark:text-gray-200" 
                 variants={itemVariants}
               >
-                I'm a <span className="text-red-600 dark:text-red-400">Full-Stack Developer</span> with over 1 year of hands-on experience.
+                I'm a <span className="text-yellow-600 dark:text-yellow-400">Full-Stack Developer</span> with over 1 year of hands-on experience.
               </motion.h3>
 
               <motion.p 
                 className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed" 
                 variants={itemVariants}
               >
-                I am passionate about creating <span className="font-medium text-red-600 dark:text-red-400">beautiful and functional solutions</span> that solve real-world problems through
+                I am passionate about creating <span className="font-medium text-yellow-600 dark:text-yellow-400">beautiful and functional solutions</span> that solve real-world problems through
                 clean code and intuitive design. With expertise in both frontend and backend technologies, I deliver
-                complete web solutions that exceed expectations and provide <span className="font-medium text-red-700 dark:text-red-500">exceptional user experiences</span>.
+                complete web solutions that exceed expectations and provide <span className="font-medium text-yellow-700 dark:text-yellow-500">exceptional user experiences</span>.
               </motion.p>
 
               <div className="flex flex-wrap gap-5">
@@ -354,7 +354,7 @@ const About = () => {
                   transition={{ type: "spring", stiffness: 500, damping: 15 }}
                 >
                   <motion.span 
-                    className="absolute inset-0 bg-gradient-to-r from-red-600 via-red-700 to-red-800"
+                    className="absolute inset-0 bg-gradient-to-r from-yellow-600 via-yellow-700 to-yellow-800"
                     whileHover={{
                       backgroundPosition: ["0% 50%", "100% 50%"],
                       transition: { duration: 0.8, ease: "easeInOut" }
@@ -362,7 +362,7 @@ const About = () => {
                     style={{ backgroundSize: "200% 200%" }}
                   ></motion.span>
                   <motion.span 
-                    className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-800 opacity-0 blur-xl"
+                    className="absolute inset-0 bg-gradient-to-r from-yellow-600 to-yellow-800 opacity-0 blur-xl"
                     whileHover={{
                       opacity: [0, 0.6, 0.4],
                       scale: [1, 1.2, 1.1],
@@ -402,17 +402,17 @@ const About = () => {
                   transition={{ type: "spring", stiffness: 500, damping: 15 }}
                 >
                   <motion.span 
-                    className="absolute inset-0 bg-gradient-to-r from-red-100 to-red-200 dark:from-red-900/30 dark:to-red-800/30 opacity-50"
+                    className="absolute inset-0 bg-gradient-to-r from-yellow-100 to-yellow-200 dark:from-yellow-900/30 dark:to-yellow-800/30 opacity-50"
                     whileHover={{
                       opacity: 1,
                       scale: 1.05,
                     }}
                   ></motion.span>
-                  <span className="relative font-medium text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-800 flex items-center">
+                  <span className="relative font-medium text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-yellow-800 flex items-center">
                     Download CV
                     <motion.svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 ml-2 text-red-700"
+                      className="h-5 w-5 ml-2 text-yellow-700"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
