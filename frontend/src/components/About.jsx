@@ -147,7 +147,7 @@ const About = () => {
       return (
         <motion.div
           key={i}
-          className="absolute rounded-full bg-gradient-to-r from-blue-500 to-purple-500 dark:from-blue-400 dark:to-purple-400"
+          className="absolute rounded-full bg-gradient-to-r from-purple-400 to-purple-500 dark:from-purple-400 dark:to-purple-500"
           initial={{ 
             opacity: 0,
             x: Math.random() * window.innerWidth,
@@ -288,7 +288,7 @@ const About = () => {
                 <span className="relative inline-block">
                   
                   <motion.span
-                    className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 blur-xl opacity-40"
+                    className="absolute inset-0 blur-xl opacity-40" style={{ background: "linear-gradient(to right, #C27AFF, #9A4DFF)" }}
                     animate={{
                       opacity: [0.3, 0.6, 0.3],
                       scale: [1, 1.1, 1],
@@ -304,7 +304,7 @@ const About = () => {
                   <span
                     className="relative"
                     style={{
-                      background: "linear-gradient(to right, #0071ff, #7c3aed)",
+                      background: "linear-gradient(to right, #C27AFF, #9A4DFF)",
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                     }}
@@ -316,7 +316,7 @@ const About = () => {
 
             
               <motion.div
-                className="w-32 h-1.5 bg-gradient-to-r from-blue-500 to-purple-600 mb-8 rounded-full"
+                className="w-32 h-1.5 bg-gradient-to-r from-purple-400 to-purple-500 mb-8 rounded-full"
                 variants={itemVariants}
                 whileInView={{
                   width: ["0%", "100%"],
@@ -332,16 +332,16 @@ const About = () => {
                 className="text-2xl font-semibold mb-5 text-gray-800 dark:text-gray-200" 
                 variants={itemVariants}
               >
-                I'm a <span className="text-blue-600 dark:text-blue-400">Full-Stack Developer</span> with over 1 year of hands-on experience.
+                I'm a <span className="text-purple-600 dark:text-purple-400">Full-Stack Developer</span> with over 1 year of hands-on experience.
               </motion.h3>
 
               <motion.p 
                 className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed" 
                 variants={itemVariants}
               >
-                I am passionate about creating <span className="font-medium text-blue-600 dark:text-blue-400">beautiful and functional solutions</span> that solve real-world problems through
+                I am passionate about creating <span className="font-medium text-purple-600 dark:text-purple-400">beautiful and functional solutions</span> that solve real-world problems through
                 clean code and intuitive design. With expertise in both frontend and backend technologies, I deliver
-                complete web solutions that exceed expectations and provide <span className="font-medium text-purple-600 dark:text-purple-400">exceptional user experiences</span>.
+                complete web solutions that exceed expectations and provide <span className="font-medium text-purple-700 dark:text-purple-500">exceptional user experiences</span>.
               </motion.p>
 
               <div className="flex flex-wrap gap-5">
@@ -354,7 +354,7 @@ const About = () => {
                   transition={{ type: "spring", stiffness: 500, damping: 15 }}
                 >
                   <motion.span 
-                    className="absolute inset-0 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600"
+                    className="absolute inset-0 bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700"
                     whileHover={{
                       backgroundPosition: ["0% 50%", "100% 50%"],
                       transition: { duration: 0.8, ease: "easeInOut" }
@@ -362,7 +362,7 @@ const About = () => {
                     style={{ backgroundSize: "200% 200%" }}
                   ></motion.span>
                   <motion.span 
-                    className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 blur-xl"
+                    className="absolute inset-0 bg-gradient-to-r from-purple-500 to-purple-700 opacity-0 blur-xl"
                     whileHover={{
                       opacity: [0, 0.6, 0.4],
                       scale: [1, 1.2, 1.1],
@@ -402,17 +402,17 @@ const About = () => {
                   transition={{ type: "spring", stiffness: 500, damping: 15 }}
                 >
                   <motion.span 
-                    className="absolute inset-0 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 opacity-50"
+                    className="absolute inset-0 bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30 opacity-50"
                     whileHover={{
                       opacity: 1,
                       scale: 1.05,
                     }}
                   ></motion.span>
-                  <span className="relative font-medium text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 flex items-center">
+                  <span className="relative font-medium text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-purple-800 flex items-center">
                     Download CV
                     <motion.svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 ml-2 text-purple-600"
+                      className="h-5 w-5 ml-2 text-purple-700"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"

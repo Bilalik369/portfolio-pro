@@ -53,10 +53,10 @@ const Projects = () => {
       technologies: [
         { name: "MongoDB", icon: <SiMongodb />, color: "text-green-600" },
         { name: "Express", icon: <SiExpress />, color: "text-gray-600" },
-        { name: "React", icon: <FaReact />, color: "text-blue-500" },
+        { name: "React", icon: <FaReact />, color: "text-purple-500" },
         { name: "Node.js", icon: <FaNodeJs />, color: "text-green-500" },
         { name: "JWT", icon: <SiJsonwebtokens />, color: "text-purple-500" },
-        { name: "Stripe", icon: <SiStripe />, color: "text-blue-600" },
+        { name: "Stripe", icon: <SiStripe />, color: "text-purple-600" },
         { name: "Firebase", icon: <SiFirebase />, color: "text-orange-500" },
         { name: "Tailwind", icon: <SiTailwindcss />, color: "text-cyan-500" }
       ],
@@ -73,12 +73,12 @@ const Projects = () => {
       technologies: [
         { name: "MongoDB", icon: <SiMongodb />, color: "text-green-600" },
         { name: "Express", icon: <SiExpress />, color: "text-gray-600" },
-        { name: "React", icon: <FaReact />, color: "text-blue-500" },
+        { name: "React", icon: <FaReact />, color: "text-purple-500" },
         { name: "Node.js", icon: <FaNodeJs />, color: "text-green-500" },
         { name: "JWT", icon: <SiJsonwebtokens />, color: "text-purple-500" },
         { name: "Socket.io", icon: <SiSocketdotio />, color: "text-black dark:text-white" },
         { name: "Tailwind", icon: <SiTailwindcss />, color: "text-cyan-500" },
-        { name: "Docker", icon: <FaCode />, color: "text-blue-600" }
+        { name: "Docker", icon: <FaCode />, color: "text-purple-600" }
       ],
       github: "https://github.com",
       live: "https://demo.com",
@@ -92,7 +92,7 @@ const Projects = () => {
       description: "Dashboard intelligent pour la surveillance de transformateurs électriques avec données en temps réel via Socket.io, visualisations interactives avec Chart.js et interface moderne responsive.",
       image: troImage,
       technologies: [
-        { name: "React", icon: <FaReact />, color: "text-blue-500" },
+        { name: "React", icon: <FaReact />, color: "text-purple-500" },
         { name: "Socket.io", icon: <SiSocketdotio />, color: "text-black dark:text-white" },
         { name: "Chart.js", icon: <FaChartBar />, color: "text-orange-500" },
         { name: "Tailwind", icon: <SiTailwindcss />, color: "text-cyan-500" },
@@ -109,7 +109,7 @@ const Projects = () => {
       description: "Application complète pour la gestion de projets de construction avec suivi des tâches, gestion des équipes, planning interactif, rapports de progression et gestion budgétaire.",
       image: xprt,
       technologies: [
-        { name: "React", icon: <FaReact />, color: "text-blue-500" },
+        { name: "React", icon: <FaReact />, color: "text-purple-500" },
         { name: "Node.js", icon: <FaNodeJs />, color: "text-green-500" },
         { name: "MongoDB", icon: <SiMongodb />, color: "text-green-600" },
         { name: "Express", icon: <SiExpress />, color: "text-gray-600" },
@@ -126,7 +126,7 @@ const Projects = () => {
       description: "Système complet de gestion pour salles de sport avec inscription des membres, planning des cours, suivi des abonnements, système de paiement et tableaux de bord analytiques.",
       image: sprt,
       technologies: [
-        { name: "React", icon: <FaReact />, color: "text-blue-500" },
+        { name: "React", icon: <FaReact />, color: "text-purple-500" },
         { name: "Node.js", icon: <FaNodeJs />, color: "text-green-500" },
         { name: "MongoDB", icon: <SiMongodb />, color: "text-green-600" },
         { name: "Express", icon: <SiExpress />, color: "text-gray-600" },
@@ -143,7 +143,7 @@ const Projects = () => {
       description: "Site portfolio moderne et interactif avec animations fluides, mode sombre/clair, formulaire de contact fonctionnel, optimisation SEO et design responsive élégant.",
       image: "/api/placeholder/600/400",
       technologies: [
-        { name: "React", icon: <FaReact />, color: "text-blue-500" },
+        { name: "React", icon: <FaReact />, color: "text-purple-500" },
         { name: "Tailwind", icon: <SiTailwindcss />, color: "text-cyan-500" },
         { name: "Framer Motion", icon: <FaCode />, color: "text-purple-500" },
         { name: "JavaScript", icon: <FaJs />, color: "text-yellow-400" }
@@ -217,7 +217,7 @@ const Projects = () => {
       return (
         <motion.div
           key={i}
-          className="absolute rounded-full bg-gradient-to-r from-blue-500 to-purple-500 dark:from-blue-400 dark:to-purple-400"
+          className="absolute rounded-full bg-gradient-to-r from-purple-400 to-purple-500 dark:from-purple-400 dark:to-purple-500"
           initial={{ 
             opacity: 0,
             x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
@@ -245,7 +245,7 @@ const Projects = () => {
   }
 
   const getProjectIcon = (type) => {
-    return type === "mobile" ? <FaMobile className="text-blue-500" /> : <FaDesktop className="text-green-500" />
+    return type === "mobile" ? <FaMobile className="text-purple-500" /> : <FaDesktop className="text-purple-600" />
   }
 
   return (
@@ -280,7 +280,7 @@ const Projects = () => {
         />
 
         <motion.div
-          className="absolute top-1/4 left-10 w-96 h-96 bg-blue-500/10 dark:bg-blue-500/20 rounded-full filter blur-3xl"
+          className="absolute top-1/4 left-10 w-96 h-96 bg-purple-400/10 dark:bg-purple-400/20 rounded-full filter blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.6, 0.3],
@@ -319,7 +319,8 @@ const Projects = () => {
             Mes{" "}
             <span className="relative inline-block">
               <motion.span
-                className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 blur-xl opacity-40"
+                className="absolute inset-0 blur-xl opacity-40"
+                style={{ background: "linear-gradient(to right, #C27AFF, #9A4DFF)" }}
                 animate={{
                   opacity: [0.3, 0.6, 0.3],
                   scale: [1, 1.1, 1],
@@ -335,7 +336,7 @@ const Projects = () => {
               <span
                 className="relative"
                 style={{
-                  background: "linear-gradient(to right, #0071ff, #7c3aed)",
+                  background: "linear-gradient(to right, #C27AFF, #9A4DFF)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}
@@ -346,7 +347,7 @@ const Projects = () => {
           </motion.h2>
 
           <motion.div
-            className="w-40 h-1.5 bg-gradient-to-r from-blue-500 to-purple-600 mb-8 rounded-full mx-auto"
+            className="w-40 h-1.5 bg-gradient-to-r from-purple-400 to-purple-500 mb-8 rounded-full mx-auto"
             variants={itemVariants}
             whileInView={{
               width: ["0%", "100%"],
@@ -379,7 +380,7 @@ const Projects = () => {
               onClick={() => setActiveCategory(category)}
               className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                 activeCategory === category
-                  ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
+                  ? "bg-gradient-to-r from-purple-500 to-purple-600 text-white shadow-lg"
                   : "bg-white/50 dark:bg-gray-800/50 text-gray-600 dark:text-gray-300 hover:bg-white/80 dark:hover:bg-gray-800/80 border border-gray-200 dark:border-gray-700"
               }`}
               variants={itemVariants}
@@ -431,11 +432,11 @@ const Projects = () => {
                 <div className="flex justify-between items-start mb-3">
                   <div className="flex items-center gap-2">
                     {getProjectIcon(project.type)}
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">
                       {project.title}
                     </h3>
                   </div>
-                  <span className="text-sm px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full">
+                  <span className="text-sm px-2 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-full">
                     {project.category}
                   </span>
                 </div>
@@ -466,7 +467,7 @@ const Projects = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+                    className="p-2 text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-300"
                   >
                     <FaGithub size={16} />
                   </a>
@@ -474,7 +475,7 @@ const Projects = () => {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+                    className="p-2 text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-300"
                   >
                     <FaExternalLinkAlt size={16} />
                   </a>
@@ -492,7 +493,7 @@ const Projects = () => {
         >
           <motion.a
             href="#contact"
-            className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+            className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-full font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
