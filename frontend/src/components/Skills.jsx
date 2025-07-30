@@ -447,8 +447,8 @@ const Skills = () => {
           }}
         />
 
-        <div className="absolute top-20 left-10 w-72 h-72 bg-red-500/10 rounded-full filter blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-red-800/10 rounded-full filter blur-3xl" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-500/10 rounded-full filter blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-yellow-600/10 rounded-full filter blur-3xl" />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-teal-500/8 rounded-full filter blur-3xl" />
       </div>
 
