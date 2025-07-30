@@ -95,7 +95,7 @@ const Home = () => {
     },
   ];
 
-  const buttonGradient = "from-yellow-600 to-yellow-700";
+  const buttonGradient = "from-purple-500 to-purple-600";
 
   return (
     <>
